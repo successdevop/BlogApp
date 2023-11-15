@@ -6,6 +6,7 @@ export const BrandLogo = () => {
       height="29"
       viewBox="0 0 140 29"
       fill="none"
+      className="cursor-pointer"
     >
       <g clipPath="url(#clip0_1355_586)">
         <path
