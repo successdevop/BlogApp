@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-function GlobalButton({ href }) {
+function GlobalButton({ href, bgColor, text = "Subscribe", hover }) {
   return (
-    <button>
-      <Link className="text-[#232536]" to={href}>
-        Subscribe
+    <button style={{ background: bgColor }} className={`hover:bg-[${hover}]`}>
+      <Link className={`text-[#232536] `} to={href}>
+        {text}
       </Link>
     </button>
   );
@@ -13,5 +13,8 @@ function GlobalButton({ href }) {
 
 GlobalButton.propTypes = {
   href: PropTypes.string,
+  bgColor: PropTypes.string,
+  text: PropTypes.string,
+  hover: PropTypes.string,
 };
 export default GlobalButton;
