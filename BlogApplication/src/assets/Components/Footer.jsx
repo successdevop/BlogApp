@@ -1,4 +1,3 @@
-import React from "react";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
@@ -27,9 +26,7 @@ const Footer = () => {
           </div>
 
           <div className="flex flex-col items-stretch w-[35%] ml-10 max-md:w-full max-md:ml-0 md:w-full ">
-            <label htmlFor="email" className="  overflow-visible ">
-              
-            </label>
+            <label htmlFor="email" className="  overflow-visible "></label>
             <input
               type="email"
               id="email"
@@ -50,18 +47,18 @@ const Footer = () => {
         </div>
 
         <div className="flex mr-10">
-            <ul className="flex space-x-3  color-[#6D6E76] gap-[0.2rem] md:gap-[1.6rem]">
+          <ul className="flex space-x-3  color-[#6D6E76] gap-[0.2rem] md:gap-[1.6rem]">
             <li>
-              <FaFacebook style={{ color: '#6D6E76' }} />
+              <FaFacebook style={{ color: "#6D6E76" }} />
             </li>
             <li>
-              <FaTwitter style={{ color: '#6D6E76' }}/>
+              <FaTwitter style={{ color: "#6D6E76" }} />
             </li>
             <li>
-              <FaInstagram style={{ color: '#6D6E76' }}/>
+              <FaInstagram style={{ color: "#6D6E76" }} />
             </li>
             <li>
-              <FaLinkedin style={{ color: '#6D6E76' }}/>
+              <FaLinkedin style={{ color: "#6D6E76" }} />
             </li>
           </ul>
         </div>
