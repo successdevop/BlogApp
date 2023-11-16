@@ -1,8 +1,11 @@
 import HeroSection from "../components/HeroSection";
 import featuredImg from "../assets/images/featuredImgs/featureA.svg";
+import discoveryImg from "../assets/images/discovery.png";
 import GlobalButton from "../components/GlobalButton";
 import { Link } from "react-router-dom";
 import Categories from "../components/Categories";
+import { authorsList1 } from "../assets/data/data";
+import Authors from "../components/Authors";
 
 function HomePage() {
   return (
@@ -107,6 +110,37 @@ function HomePage() {
       <section className="max-w-7xl mx-auto">
         <Categories />
       </section>
+
+      {/* discover section */}
+      <section className="max-w-7xl mx-auto mt-[8rem] lg:relative">
+        <div>
+          <img
+            src={discoveryImg}
+            alt="discoverImg"
+            className="block lg:overflow-hidden"
+          />
+          <div className="mt-[1rem] pt-4 p-1 bg-[#fff] lg:absolute lg:bottom-0 lg:right-0 lg:w-[55%] lg:h-[70%] lg:px-[5%] lg:py-[7%]">
+            <h5 className="text-[#232536] text-[1.1rem] font-semibold leading-[1rem] tracking-[.3rem] uppercase">
+              Why we started
+            </h5>
+            <h4 className="text-[3.5rem] my-4 font-bold leading-[4rem] tracking-[-.1rem] lg:text-[2.5rem] lg:font-medium lg:leading-[3rem]">
+              It started out as a simple idea and evolved into our passion
+            </h4>
+            <p className="text-[1.1rem] mb-6 leading-[2rem] text-[#6D6E76]">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip.
+            </p>
+            <GlobalButton text="Discover our story >" bgColor={"#FFD050"} />
+          </div>
+        </div>
+      </section>
+
+      {/* list of Authors section */}
+      <div className="mt-[6rem]">
+        <Authors authorsData={authorsList1} />
+      </div>
     </>
   );
 }
