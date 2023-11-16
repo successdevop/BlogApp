@@ -6,4 +6,5 @@ export const navLinks = [
   { id: nanoid(), text: "Blog", href: BLOG },
   { id: nanoid(), text: "About Us", href: ABOUT },
   { id: nanoid(), text: "Contact Us", href: CONTACT },
+
 ];
