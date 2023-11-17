@@ -1,4 +1,3 @@
-import Footer from "../assets/Components/Footer";
 import HeroSection from "../components/HeroSection";
 import featuredImg from "../assets/images/featuredImgs/featureA.svg";
 import discoveryImg from "../assets/images/discovery.png";
@@ -7,15 +6,14 @@ import { Link } from "react-router-dom";
 import Categories from "../components/Categories";
 import { authorsList1 } from "../assets/data/data";
 import Authors from "../components/Authors";
+import FeaturedLogos from "../components/FeaturedLogos";
+import Testimonials from "../components/Testimonials";
+import JoinOurTeam from "../components/JoinOurTeam";
 
 function HomePage() {
   return (
     <>
       <HeroSection />
-
-      <Footer />
-      
-=======
 
       {/* featured post section */}
       <section className="max-w-7xl mx-auto lg:px-4 lg:flex lg:gap-6 pt-[8rem]">
@@ -147,6 +145,20 @@ function HomePage() {
         <Authors authorsData={authorsList1} />
       </div>
 
+      {/* list of features section */}
+      <div className="mt-[6rem] max-w-7xl mx-auto">
+        <FeaturedLogos />
+      </div>
+
+      {/* testimonial section */}
+      <div className="mt-[6rem] max-w-7xl mx-auto">
+        <Testimonials />
+      </div>
+
+      {/* testimonial section */}
+      <div className="mt-[6rem] max-w-7xl mx-auto">
+        <JoinOurTeam />
+      </div>
     </>
   );
 }

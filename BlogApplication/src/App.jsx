@@ -24,10 +24,9 @@ function App() {
         <Route path={ABOUT} element={<AboutPage />} />
         <Route path={CONTACT} element={<ContactPage />} />
         <Route path={SUBSCRIBE} element={<HomePage />} />
-        <Route path={PRIVACY} element={<Privacy_Policy_Page/>} />
+        <Route path={PRIVACY} element={<Privacy_Policy_Page />} />
       </Routes>
-      
-    </> 
+    </>
   );
 }
 
