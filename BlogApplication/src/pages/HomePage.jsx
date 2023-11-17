@@ -1,3 +1,4 @@
+import Footer from "../assets/Components/Footer";
 import HeroSection from "../components/HeroSection";
 import featuredImg from "../assets/images/featuredImgs/featureA.svg";
 import discoveryImg from "../assets/images/discovery.png";
@@ -11,6 +12,10 @@ function HomePage() {
   return (
     <>
       <HeroSection />
+
+      <Footer />
+      
+=======
 
       {/* featured post section */}
       <section className="max-w-7xl mx-auto lg:px-4 lg:flex lg:gap-6 pt-[8rem]">
@@ -141,6 +146,7 @@ function HomePage() {
       <div className="mt-[6rem]">
         <Authors authorsData={authorsList1} />
       </div>
+
     </>
   );
 }

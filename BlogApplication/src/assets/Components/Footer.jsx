@@ -1,19 +1,21 @@
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { BrandLogo } from "../../utility/icons";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
     <div className="bg-[#232536] mt-[4rem] sm:mt-[8rem]">
       <nav className="flex md:flex-row flex-col  md:justify-between items-center  px-20 max-md:px-5 ml-[2.5rem] pt-3">
         <h1 className="text-white font-bold text-center text-[1.5rem] md:text-[3.5rem] cursor-pointer mt-5 px-6 py-4 ">
-          {"{Finsweet"}
+          <BrandLogo/>
         </h1>
 
         <ul className="flex items-stretch justify-center md:justify-between flex-col md:flex-row gap-5 mt-8 max-md:max-w-full max-md:mt-10 text-white text-base leading-7 font-bold">
-          <a href="#">Home</a>
-          <a href="#">Blog</a>
-          <a href="#">About us</a>
-          <a href="#">Contact us</a>
-          <a href="#">Privacy Policy</a>
+        <Link to="/">Home</Link>
+          <Link to="/blog">Blog</Link>
+          <Link to="/about">About us</Link>
+          <Link to="/contact">Contact us</Link>
+          <Link to="/privacy">Privacy Policy</Link>
         </ul>
       </nav>
 
