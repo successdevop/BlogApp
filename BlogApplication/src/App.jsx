@@ -4,6 +4,7 @@ import {
   BLOG,
   CONTACT,
   HOME,
+  PRIVACY,
   SUBSCRIBE,
 } from "./assets/constants/routePaths";
 import HomePage from "./pages/HomePage";
@@ -11,7 +12,7 @@ import BlogPage from "./pages/BlogPage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import Navbar from "./components/Navbar";
-import Footer from "./assets/Components/Footer";
+import Privacy_Policy_Page from "./pages/Privacy_Policy_Page";
 
 function App() {
   return (
@@ -23,8 +24,8 @@ function App() {
         <Route path={ABOUT} element={<AboutPage />} />
         <Route path={CONTACT} element={<ContactPage />} />
         <Route path={SUBSCRIBE} element={<HomePage />} />
+        <Route path={PRIVACY} element={<Privacy_Policy_Page />} />
       </Routes>
-      <Footer />
     </>
   );
 }
