@@ -6,6 +6,9 @@ import { Link } from "react-router-dom";
 import Categories from "../components/Categories";
 import { authorsList1 } from "../assets/data/data";
 import Authors from "../components/Authors";
+import FeaturedLogos from "../components/FeaturedLogos";
+import Testimonials from "../components/Testimonials";
+import JoinOurTeam from "../components/JoinOurTeam";
 
 function HomePage() {
   return (
@@ -140,6 +143,21 @@ function HomePage() {
       {/* list of Authors section */}
       <div className="mt-[6rem]">
         <Authors authorsData={authorsList1} />
+      </div>
+
+      {/* list of features section */}
+      <div className="mt-[6rem] max-w-7xl mx-auto">
+        <FeaturedLogos />
+      </div>
+
+      {/* testimonial section */}
+      <div className="mt-[6rem] max-w-7xl mx-auto">
+        <Testimonials />
+      </div>
+
+      {/* testimonial section */}
+      <div className="mt-[6rem] max-w-7xl mx-auto">
+        <JoinOurTeam />
       </div>
     </>
   );
