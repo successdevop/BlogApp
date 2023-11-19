@@ -3,15 +3,15 @@ import { imgA } from "../utility/images";
 
 function Testimonials() {
   return (
-    <div className="bg-[#FBF6EA] p-12 grid gap-[3rem] lmd:grid-cols-2">
-      <div className=" border-b-4 pb-[3rem] lmd:pb-0 lmd:border-r-2 lmd:border-b-0 lmd:pr-[1.5rem]">
-        <h6 className="text-[1.2rem] font-semibold leading-[1.5rem] tracking-[.3rem] uppercase text-[#232536]">
+    <div className="bg-[#FBF6EA] p-12 grid gap-[3rem] lmd:grid-cols-[1.5fr_2fr] lmd:p-[7rem]">
+      <div className="grid justify-items-center text-center border-b-4 pb-[3rem] lmd:block lmd:text-left lmd:pb-0 lmd:border-r-2 lmd:border-b-0 lmd:pr-[3rem]">
+        <h6 className="text-[#232536] text-[1.6rem] font-semibold leading-[2rem] tracking-[.3rem] uppercase">
           TESTIMONIALs
         </h6>
-        <h3 className="text-[2.7rem] font-bold my-6 leading-[3rem] tracking-[-.05rem] text-[#232536]">
+        <h3 className="max-w-[34.5rem] mt-[1.2rem] mb-[1.6rem] font-Sen text-[3.6rem] font-bold leading-[4.8rem] tracking-[-.2rem] text-[#232536]">
           What people say about our blog
         </h3>
-        <p className="text-[#232536] text-[1.3rem] leading-[2.5rem]">
+        <p className="max-w-[34.9rem] text-[#232536] text-[1.6rem] leading-[2.8rem]">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor.
         </p>
@@ -19,28 +19,28 @@ function Testimonials() {
 
       {/* carousel box */}
       <div>
-        <div className="grid gap-[4rem]">
-          <p className="text-[1.6rem] font-medium leading-[2.5rem] text-[#232536]">
+        <div className="grid gap-[4rem] justify-items-center text-center">
+          <p className="max-w-[46.9rem] font-Sen text-[2.4rem] font-bold leading-[3.2rem] text-[#232536]">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
-          <div className="relative">
-            <div className="flex gap-4 items-center">
+          <div className="mt-[5rem] relative lmd:justify-self-stretch">
+            <div className="flex gap-[1.6rem] items-center">
               <img
                 src={imgA}
                 alt="testimonial images"
-                className="w-16 h-16 rounded-full"
+                className="w-[4.8rem] h-[4.8rem] rounded-full"
               />
               <div>
-                <h5 className="text-[#232536] text-[1.3rem] font-bold">
+                <h5 className="text-[#232536] font-Sen text-[2rem] font-bold leading-[1.6rem]">
                   Jonathan Vallem
                 </h5>
-                <p className="text-[#6D6E76] text-[1rem] leading-[1rem]">
+                <p className="text-[#6D6E76] text-[1.4rem] leading-[2.8rem] lmd:text-left">
                   New york, USA
                 </p>
               </div>
             </div>
-            <div className="flex gap-4 mt-4 justify-center h-[2.6rem] lmd:absolute lmd:bottom-0 lmd:right-[1rem]">
+            <div className="flex gap-4 mt-4 justify-center h-[2.6rem] lmd:absolute lmd:bottom-0 lmd:right-[0rem] lmd:justify-self-end">
               <span className="h-[2.6rem]">
                 <LeftArrorIcon
                   className={

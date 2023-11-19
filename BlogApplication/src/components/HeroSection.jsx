@@ -10,30 +10,28 @@ function HeroSection() {
       }}
     >
       <div
-        className={`px-8 py-[2rem] text-center grid gap-4 max-w-7xl mx-auto justify-items-center lg:justify-items-start lg:text-left lg:py-[6rem] lg:gap-0`}
+        className={`p-16 text-center grid gap-12 justify-items-center lg:gap-[5rem] lg:py-[7rem] lg:justify-items-start lg:text-left max-w-[128rem] mx-auto`}
       >
-        <p className="text-[#e2e2e2] text-[12px] uppercase font-medium leading-[2rem] tracking-[.3rem] md:text-[1.6rem] mb-4">
+        <p className="text-[#e2e2e2] text-[1.6rem] uppercase font-medium leading-[2rem] tracking-[.3rem] md:text-[1.6rem]">
           posted on <span className="font-black text-white">startup</span>
         </p>
 
-        <h5 className="text-[3rem]  text-white max-w-[60.3rem] md:text-[5.6rem] md:mb-[2.4rem] md:tracking-[-.2rem] md:font-bold md:leading-[6.4rem] lmd:max-w-[60rem]">
+        <h5 className="max-w-[80rem] font-Sen text-[5.6rem] font-bold leading-[6.4rem] tracking-[-.2rem] text-white">
           Step-by-step guide to choosing great font pairs
         </h5>
-        <div className="mb-[2rem] md:mb-[2.9rem]">
-          <p className="text-[#e2e2e2] md:text-[1.6rem] leading-[2.8rem] font-normal md:mb-[1.6rem]">
+
+        <div className="mb-4">
+          <p className="mb-8 text-[#e2e2e2] text-[1.6rem] leading-[2.8rem]">
             By <span className="text-[#FFD050]">James West</span> | May 23, 2022
           </p>
-          <p className="text-[#e2e2e2] leading-8 md:text-[1.6rem] md:leading-[2.8rem] font-normal lmd:max-w-[53rem]">
+          <p className="max-w-[60rem] text-[#e2e2e2] text-[1.6rem] leading-[2.8rem]">
             Duis aute irure dolor in reprehenderit in voluptate velit esse
             cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
             cupidatat non proident.
           </p>
         </div>
-        <GlobalButton
-          text="Read More >"
-          bgColor={"#FFD050"}
-          hover={"#EDC14A"}
-        />
+
+        <GlobalButton text="Read More >" className={"bg-[#FFD050]"} />
       </div>
     </div>
   );

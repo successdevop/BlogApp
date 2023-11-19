@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import GlobalButton from "../components/GlobalButton";
 import { featurePageImage, twoWomen } from "../utility/images";
 import Categories from "../components/Categories";
