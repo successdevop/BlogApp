@@ -26,7 +26,11 @@ function Navbar() {
           </div>
         </div>
         <Links showLink={showNavLink}>
-          <GlobalButton href={SUBSCRIBE} />
+          <GlobalButton
+            text="Subscribe"
+            className={"bg-white"}
+            href={SUBSCRIBE}
+          />
         </Links>
       </nav>
     </div>
