@@ -13,6 +13,7 @@ import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import Navbar from "./components/Navbar";
 import Privacy_Policy_Page from "./pages/Privacy_Policy_Page";
+import BlogPostPage from "./pages/BlogPostPage";
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route index path={HOME} element={<HomePage />} />
-        <Route path={BLOG} element={<BlogPage />} />
+        <Route path={BLOG} element={<BlogPostPage />} />
         <Route path={ABOUT} element={<AboutPage />} />
         <Route path={CONTACT} element={<ContactPage />} />
         <Route path={SUBSCRIBE} element={<HomePage />} />
