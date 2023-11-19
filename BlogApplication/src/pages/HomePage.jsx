@@ -16,9 +16,9 @@ function HomePage() {
       <HeroSection />
 
       {/* featured post section */}
-      <section className="max-w-7xl mx-auto lg:px-4 lg:flex lg:gap-6 pt-[8rem]">
+      <section className="max-w-7xl mx-auto lg:px-4 lg:flex lg:gap-6">
         <div className="my-[2.5rem] lg:mb-[0] lg:mt-[5rem] px-2">
-          <h4 className="mb-[.5rem] font-bold text-[#232536] text-[2rem] lg:text-[3.6rem] lg:leading-[4.8rem] lg:tracking-[-.2rem]">
+          <h4 className="mb-[.5rem] font-bold text-[#232536] text-[2rem] lg:text-[3rem] lg:leading-[4rem] lg:tracking-[-.1rem]">
             Featured Post
           </h4>
           <div className="border border-[#6D6E76] p-4">
@@ -28,11 +28,11 @@ function HomePage() {
                 By <span className="text-[#592EA9]">John Doe</span> l May 23,
                 2022
               </p>
-              <p className="mb-[1rem] text-[#232536] text-[1.6rem] leading-8 font-medium lg:text-[2.8rem] lg:font-bold lg:leading-[4rem] tracking-[-.1rem]">
+              <p className="mb-[1rem] text-[#232536] text-[1.6rem] leading-8 font-medium lg:text-[2.5rem] lg:font-semibold lg:leading-[3.5rem] tracking-[-.05rem]">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor.
               </p>
-              <p className="mb-[1.2rem] text-[#6D6E76] text-[13px] lg:text-[1.6rem] lg:leading-[2.8rem]">
+              <p className="mb-[1.2rem] text-[#6D6E76] text-[13px] lg:text-[1.3rem] lg:leading-[2rem]">
                 Duis aute irure dolor in reprehenderit in voluptate velit esse
                 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
                 cupidatat non proident.
@@ -44,10 +44,10 @@ function HomePage() {
         {/* All post */}
         <div className="">
           <div className="flex items-center justify-between px-2 lg:mt-[5rem]">
-            <h2 className="font-bold text-[#232536] text-[2rem] lg:text-[3.6rem] lg:leading-[4.8rem] lg:tracking-[-.2rem]">
+            <h2 className="font-bold text-[#232536] text-[2rem] lg:text-[2.9rem] lg:leading-[4rem] lg:tracking-[-.1rem]">
               All Posts
             </h2>
-            <p className="text-[#592EA9] lg:text-[1.6rem] lg:leading-[2.8rem]">
+            <p className="text-[#592EA9] lg:text-[1.3rem] lg:leading-[2rem]">
               View All
             </p>
           </div>
@@ -58,7 +58,7 @@ function HomePage() {
                   By <span className="text-[#592EA9]">John Doe</span> l Aug 23,
                   2021
                 </p>
-                <p className="text-[#232536] font-bold text-[1.6rem] lg:text-[2.4rem] lg:leading-[3.2rem]">
+                <p className="text-[#232536] font-medium text-[1.6rem] lg:text-[2.4rem] lg:leading-[3.2rem]">
                   8 Figma design systems that you can download for free today.
                 </p>
               </div>
@@ -75,15 +75,15 @@ function HomePage() {
           <div className="h-4 bg-[#592EA9]"></div>
         </div>
         {/* about */}
-        <div className="bg-[#F4F0F8] p-12 lg:grid grid-cols-2 gap-12">
+        <div className="bg-[#F4F0F8] p-12 lg:grid grid-cols-2 gap-8">
           <div className="mb-[4rem]">
-            <p className="text-[1.2rem] mb-4 font-medium leading-8 tracking-[.3rem] uppercase lg:font-semibold lg:text-[1.6rem]">
+            <p className="text-[1.2rem] mb-4 font-medium leading-8 tracking-[.3rem] uppercase lg:text-[1.6rem]">
               ABOUT US
             </p>
-            <h2 className="text-[2.4rem] mb-4 leading-[3.3rem] font-bold tracking-[-0.05rem] lg:leading-[4.8rem] lg:tracking-[-.2rem] lg:text-[3.6rem]">
+            <h2 className="text-[2.4rem] mb-4 leading-[3.3rem] font-bold tracking-[-0.05rem] lg:leading-[4rem] lg:tracking-[-.05rem] lg:text-[3rem]">
               We are a community of content writers who share their learnings
             </h2>
-            <p className="text-[1.1rem] mb-4 leading-8 lg:text-[1.6rem] lg:leading-[2.8rem]">
+            <p className="text-[1.1rem] mb-4 leading-8 lg:text-[1.25rem] lg:leading-[2.8rem]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
@@ -93,13 +93,13 @@ function HomePage() {
           </div>
           {/* mission */}
           <div>
-            <p className="text-[1.2rem] mb-4 font-medium leading-8 tracking-[.3rem] uppercase lg:font-semibold lg:text-[1.6rem]">
+            <p className="text-[1.2rem] mb-4 font-medium leading-8 tracking-[.3rem] uppercase lg:text-[1.6rem]">
               Our mision
             </p>
-            <h2 className="text-[2.4rem] mb-4 leading-[3.3rem] font-bold tracking-[-0.05rem] lg:leading-[4.8rem] lg:tracking-[-.2rem] lg:text-[3.6rem]">
+            <h2 className="text-[2.4rem] mb-4 leading-[3.3rem] font-bold tracking-[-0.05rem] lg:leading-[4rem] lg:tracking-[-.05rem] lg:text-[3rem]">
               Creating valuable content for creatives all around the world
             </h2>
-            <p className="text-[1.1rem] leading-8 lg:text-[1.6rem] lg:leading-[2.8rem]">
+            <p className="text-[1.1rem] leading-8 lg:text-[1.25rem] lg:leading-[2.8rem]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -151,12 +151,12 @@ function HomePage() {
       </div>
 
       {/* testimonial section */}
-      <div className="mt-[6rem] max-w-7xl mx-auto">
+      <div className="mt-[10rem] max-w-7xl mx-auto">
         <Testimonials />
       </div>
 
       {/* testimonial section */}
-      <div className="mt-[6rem] max-w-7xl mx-auto">
+      <div className="my-[6rem]  max-w-7xl mx-auto">
         <JoinOurTeam />
       </div>
     </>
