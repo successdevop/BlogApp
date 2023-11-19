@@ -155,7 +155,7 @@ function HomePage() {
         <Testimonials />
       </div>
 
-      {/* testimonial section */}
+      {/* joinOurTeam section */}
       <div className="my-[6rem]  max-w-7xl mx-auto">
         <JoinOurTeam />
       </div>
