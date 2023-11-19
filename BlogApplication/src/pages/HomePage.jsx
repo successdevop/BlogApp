@@ -16,14 +16,14 @@ function HomePage() {
       <HeroSection />
 
       {/* featured post section */}
-      <section className="max-w-7xl mx-auto lg:px-4 lg:flex lg:gap-6">
+      <section className="max-w-[128rem] mx-auto lg:px-4 lg:flex lg:gap-6">
         <div className="my-[2.5rem] lg:mb-[0] lg:mt-[5rem] px-2">
           <h4 className="mb-[.5rem] font-bold text-[#232536] text-[2rem] lg:text-[3rem] lg:leading-[4rem] lg:tracking-[-.1rem]">
             Featured Post
           </h4>
           <div className="border border-[#6D6E76] p-4">
             <img src={featuredImg} alt="featured image" className="w-full" />
-            <div className="mt-[1rem]">
+            <div className="mt-[1rem] pb-[1rem]">
               <p className="text-[#4C4C4C] text=[1.4rem] font-medium leading-[2rem]">
                 By <span className="text-[#592EA9]">John Doe</span> l May 23,
                 2022
@@ -37,7 +37,7 @@ function HomePage() {
                 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
                 cupidatat non proident.
               </p>
-              <GlobalButton text="Read More >" bgColor={"#FFD050"} />
+              <GlobalButton text="Read More >" className={"bg-[#FFD050]"} />
             </div>
           </div>
         </div>
@@ -47,7 +47,7 @@ function HomePage() {
             <h2 className="font-bold text-[#232536] text-[2rem] lg:text-[2.9rem] lg:leading-[4rem] lg:tracking-[-.1rem]">
               All Posts
             </h2>
-            <p className="text-[#592EA9] lg:text-[1.3rem] lg:leading-[2rem]">
+            <p className="text-[#592EA9] lg:text-[1.3rem] lg:leading-[2rem] cursor-pointer">
               View All
             </p>
           </div>
@@ -68,38 +68,38 @@ function HomePage() {
       </section>
 
       {/* about us and mission section */}
-      <section className="pt-[10rem] max-w-7xl mx-auto">
+      <section className="pt-[10rem] max-w-[128rem] mx-auto">
         <div className="h-4 grid grid-cols-[1fr_3fr_1fr]">
           <div className="h-4 bg-[#fff]"></div>
           <div className="h-4 bg-[#FFD050]"></div>
           <div className="h-4 bg-[#592EA9]"></div>
         </div>
         {/* about */}
-        <div className="bg-[#F4F0F8] p-12 lg:grid grid-cols-2 gap-8">
-          <div className="mb-[4rem]">
-            <p className="text-[1.2rem] mb-4 font-medium leading-8 tracking-[.3rem] uppercase lg:text-[1.6rem]">
+        <div className="bg-[#F4F0F8] p-[5rem] lg:grid lg:grid-cols-2 lg:gap-8">
+          <div className="mb-[8rem] lg:mb-0">
+            <p className="text-[#232536] text-[1.6rem] font-semibold leading-8 tracking-[.3rem] uppercase">
               ABOUT US
             </p>
-            <h2 className="text-[2.4rem] mb-4 leading-[3.3rem] font-bold tracking-[-0.05rem] lg:leading-[4rem] lg:tracking-[-.05rem] lg:text-[3rem]">
+            <h2 className="mt-[2.4rem] mb-[1.6rem] max-w-[49.4rem] text-[#232536] font-Sen text-[3.6rem] font-bold leading-[4.8rem] tracking-[-.2rem]">
               We are a community of content writers who share their learnings
             </h2>
-            <p className="text-[1.1rem] mb-4 leading-8 lg:text-[1.25rem] lg:leading-[2.8rem]">
+            <p className="max-w-[51.5rem] text-[#6D6E76] text-[1.6rem] leading-[2.8rem] mb-[1.6rem]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
             <Link>
-              <span className="text-[#592EA9] lg:text-[1.8rem] font-bold leading-[3.2rem]">{`Read More >`}</span>
+              <span className="text-[#592EA9] font-Sen text-[1.8rem] font-bold leading-[3.2rem]">{`Read More >`}</span>
             </Link>
           </div>
           {/* mission */}
           <div>
-            <p className="text-[1.2rem] mb-4 font-medium leading-8 tracking-[.3rem] uppercase lg:text-[1.6rem]">
+            <p className="text-[#232536] text-[1.6rem] font-semibold leading-8 tracking-[.3rem] uppercase">
               Our mision
             </p>
-            <h2 className="text-[2.4rem] mb-4 leading-[3.3rem] font-bold tracking-[-0.05rem] lg:leading-[4rem] lg:tracking-[-.05rem] lg:text-[3rem]">
+            <h2 className="mt-[2.4rem] mb-[1.6rem] max-w-[49.4rem] text-[#232536] font-Sen text-[3.6rem] font-bold leading-[4.8rem] tracking-[-.2rem]">
               Creating valuable content for creatives all around the world
             </h2>
-            <p className="text-[1.1rem] leading-8 lg:text-[1.25rem] lg:leading-[2.8rem]">
+            <p className="max-w-[51.5rem] text-[#6D6E76] text-[1.6rem] leading-[2.8rem]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -110,48 +110,51 @@ function HomePage() {
       </section>
 
       {/* category section */}
-      <section className="max-w-7xl mx-auto">
+      <section className="max-w-[128rem] mx-auto">
         <Categories />
       </section>
 
-      {/* discover section */}
-      <section className="max-w-7xl mx-auto mt-[8rem] lg:relative">
+      {/* discover/about section */}
+      <section className="max-w-[128rem] mx-auto mt-[8rem] lg:relative">
         <div>
           <img
             src={discoveryImg}
             alt="discoverImg"
-            className="block lg:overflow-hidden"
+            className="block lg:w-[60%]"
           />
-          <div className="mt-[1rem] pt-4 p-1 bg-[#fff] lg:absolute lg:bottom-0 lg:right-0 lg:w-[55%] lg:h-[70%] lg:px-[5%] lg:py-[7%]">
-            <h5 className="text-[#232536] text-[1.1rem] font-semibold leading-[1rem] tracking-[.3rem] uppercase">
+          <div className="pt-4 p-1 bg-[#fff] lg:absolute lg:bottom-0 lg:right-0 lg:p-[4rem] xlg:p-[8rem]">
+            <h5 className="text-[#232536] text-[1.6rem] font-semibold leading-[2rem] tracking-[.3rem] uppercase">
               Why we started
             </h5>
-            <h4 className="text-[3.5rem] my-4 font-bold leading-[4rem] tracking-[-.1rem] lg:text-[2.5rem] lg:font-medium lg:leading-[3rem]">
+            <h4 className="max-w-[54.6rem] text-[#232536] font-Sen text-[4.8rem] font-bold mt-[2.4rem] mb-[1.6rem] leading-[6.4rem] tracking-[-.2rem] lg:text-[2.4rem] lg:leading-[3.2rem] lg:tracking-[-.05rem]">
               It started out as a simple idea and evolved into our passion
             </h4>
-            <p className="text-[1.1rem] mb-6 leading-[2rem] text-[#6D6E76]">
+            <p className="max-w-[54.6rem] text-[#6D6E76] text-[1.6rem] leading-[2.8rem] mb-[3.2rem]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
               nisi ut aliquip.
             </p>
-            <GlobalButton text="Discover our story >" bgColor={"#FFD050"} />
+            <GlobalButton
+              text="Discover our story >"
+              className={"bg-[#FFD050]"}
+            />
           </div>
         </div>
       </section>
 
       {/* list of Authors section */}
-      <div className="mt-[6rem]">
+      <div className="mt-[10rem]">
         <Authors authorsData={authorsList1} />
       </div>
 
       {/* list of features section */}
-      <div className="mt-[6rem] max-w-7xl mx-auto">
+      <div className="mt-[10rem] max-w-[128rem] mx-auto">
         <FeaturedLogos />
       </div>
 
       {/* testimonial section */}
-      <div className="mt-[10rem] max-w-7xl mx-auto">
+      <div className="mt-[10rem] max-w-[128rem] mx-auto">
         <Testimonials />
       </div>
 
