@@ -5,6 +5,7 @@ import {
   CONTACT,
   HOME,
   PRIVACY,
+  SUBSCRIBE,
 } from "./assets/constants/routePaths";
 
 import Navbar from "./components/Navbar";
@@ -26,7 +27,7 @@ function App() {
         <Route path={BLOG} element={<BlogPage />} />
         <Route path={ABOUT} element={<AboutPage />} />
         <Route path={CONTACT} element={<ContactPage />} />
-        <Route path={PRIVACY} element={<Privacy_Policy_Page />} />
+        <Route path={SUBSCRIBE} element={<Privacy_Policy_Page />} />
       </Routes>
     </>
   );
