@@ -1,4 +1,7 @@
-import { discoveryImg } from "../utility/images";
+import { authorsList2 } from "../assets/data/data";
+import Authors from "../components/Authors";
+import JoinOurTeam from "../components/JoinOurTeam";
+import { aboutImgA, aboutImgB, discoveryImg } from "../utility/images";
 
 function AboutPage() {
   return (
@@ -93,6 +96,72 @@ function AboutPage() {
           </div>
         </div>
       </section>
+
+      {/* section three */}
+      <section className="p-[2rem] mt-[10rem] grid gap-8 lg:items-center lmd:grid-cols-2 lg:gap-[6rem] lmd:justify-items-center max-w-[120rem] mx-auto relative">
+        <div className="grid gap-4 lg:gap-8 order-2 lmd:order-1">
+          <h2 className="text-[#232536] font-Sen text-[3.6rem] font-bold leading-[4.8rem] tracking-[-.2rem]">
+            Our team of creatives
+          </h2>
+          <h5 className="max-w-[51.9rem] font-Sen text-[2.4rem] font-bold leading-[3.2rem] text-[rgba(35,37,54,0.75)]">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt.
+          </h5>
+          <p className="max-w-[51.9rem] text-[#6D6E76] text-[1.6rem] leading-[2.8rem]">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat.
+          </p>
+        </div>
+        <div className="order-1 lmd:order-2 lg:relative">
+          <img
+            src={aboutImgA}
+            alt="about img"
+            className="w-full block relative"
+          />
+        </div>
+        <span className="h-[6.8rem] w-[6.8rem] bg-[#FFD050] hidden lg:block lg:absolute lg:right-[45%] lg:z-50 rounded-tl-[3rem]"></span>
+      </section>
+
+      {/* section four */}
+      <section className="p-[2rem] mt-[10rem] grid gap-8 lg:items-center lmd:grid-cols-2 lg:gap-[6rem] lmd:justify-items-center max-w-[120rem] mx-auto relative">
+        <div className="">
+          <img
+            src={aboutImgB}
+            alt="about img"
+            className="w-full block relative"
+          />
+        </div>
+
+        <div className="grid gap-4 lg:gap-8">
+          <h2 className="text-[#232536] font-Sen text-[3.6rem] font-bold leading-[4.8rem] tracking-[-.2rem]">
+            Why we started this Blog
+          </h2>
+          <h5 className="max-w-[51.9rem] font-Sen text-[2.4rem] font-bold leading-[3.2rem] text-[rgba(35,37,54,0.75)]">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt.
+          </h5>
+          <p className="max-w-[51.9rem] text-[#6D6E76] text-[1.6rem] leading-[2.8rem]">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat.
+          </p>
+        </div>
+      </section>
+
+      {/* list of Authors section */}
+      <div className="mt-[10rem]">
+        <Authors authorsData={authorsList2} />
+      </div>
+
+      {/* joinOurTeam section */}
+      <div className="my-[6rem]">
+        <JoinOurTeam />
+      </div>
     </div>
   );
 }
