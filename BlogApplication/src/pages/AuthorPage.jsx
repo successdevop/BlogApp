@@ -1,11 +1,5 @@
-import Footer from "../assets/Components/Footer";
-
 const AuthorPage = () => {
-  return (
-    <div>
-      <Footer />
-    </div>
-  );
+  return <div></div>;
 };
 
 export default AuthorPage;

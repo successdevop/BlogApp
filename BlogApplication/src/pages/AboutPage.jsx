@@ -159,7 +159,7 @@ function AboutPage() {
       </div>
 
       {/* joinOurTeam section */}
-      <div className="my-[6rem]">
+      <div className="mt-[10rem]">
         <JoinOurTeam />
       </div>
     </div>
