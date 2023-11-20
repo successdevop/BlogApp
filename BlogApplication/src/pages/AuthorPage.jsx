@@ -1,14 +1,11 @@
-import React from 'react'
-import Footer from '../assets/Components/Footer'
+import Footer from "../assets/Components/Footer";
 
 const AuthorPage = () => {
   return (
     <div>
-       
-
-      <Footer/>
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default AuthorPage
+export default AuthorPage;
