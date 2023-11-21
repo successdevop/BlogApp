@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function Authors({ authorsData }) {
   return (
-    <div className="max-w-[128rem] mx-auto">
+    <div className="">
       <h5 className="text-[#232536] font-Sen text-[3.2rem] font-bold leading-[4.8rem] tracking-[-.2rem] text-center mb-8">
         List of Authors
       </h5>
