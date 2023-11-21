@@ -80,7 +80,7 @@ function BlogPage() {
       </div>
 
       {/* join our team */}
-      <div className="max-w-[128rem] mx-auto mt-[10rem]">
+      <div className="max-w-[128rem] mx-auto my-[10rem]">
         <JoinOurTeam />
       </div>
     </div>

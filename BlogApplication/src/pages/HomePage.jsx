@@ -16,7 +16,7 @@ function HomePage() {
       <HeroSection />
 
       {/* featured post section */}
-      <section className="max-w-[128rem] mx-auto lg:px-4 lg:flex lg:gap-6">
+      <section className="max-w-[120rem] mx-auto lg:px-4 lg:flex lg:gap-6">
         <div className="my-[2.5rem] lg:mb-[0] lg:mt-[5rem] px-2">
           <h4 className="mb-[.5rem] font-bold text-[#232536] text-[2rem] lg:text-[3rem] lg:leading-[4rem] lg:tracking-[-.1rem]">
             Featured Post
@@ -68,7 +68,7 @@ function HomePage() {
       </section>
 
       {/* about us and mission section */}
-      <section className="pt-[10rem] max-w-[128rem] mx-auto">
+      <section className="pt-[10rem] max-w-[120rem] mx-auto">
         <div className="h-4 grid grid-cols-[1fr_3fr_1fr]">
           <div className="h-4 bg-[#fff]"></div>
           <div className="h-4 bg-[#FFD050]"></div>
@@ -110,12 +110,12 @@ function HomePage() {
       </section>
 
       {/* category section */}
-      <section className="max-w-[128rem] mx-auto">
+      <section className="max-w-[120rem] mx-auto">
         <Categories />
       </section>
 
       {/* discover/about section */}
-      <section className="max-w-[128rem] mx-auto mt-[8rem] lg:relative">
+      <section className="max-w-[120rem] mx-auto mt-[8rem] lg:relative">
         <div>
           <img
             src={discoveryImg}
@@ -144,7 +144,7 @@ function HomePage() {
       </section>
 
       {/* list of Authors section */}
-      <div className="mt-[10rem]">
+      <div className="mt-[10rem] max-w-[120rem] mx-auto">
         <Authors authorsData={authorsList1} />
       </div>
 
@@ -154,12 +154,12 @@ function HomePage() {
       </div>
 
       {/* testimonial section */}
-      <div className="mt-[10rem] max-w-[128rem] mx-auto">
+      <div className="mt-[10rem] max-w-[120rem] mx-auto">
         <Testimonials />
       </div>
 
       {/* joinOurTeam section */}
-      <div className="my-[6rem]  max-w-7xl mx-auto">
+      <div className="my-[10rem]">
         <JoinOurTeam />
       </div>
     </>

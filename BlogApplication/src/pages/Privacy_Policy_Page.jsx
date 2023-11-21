@@ -9,7 +9,7 @@ const Privacy_Policy_Page = () => {
           Last Updated on 27th January 2022
         </p>
       </div>
-      <div className="max-w-[76.8rem] mx-auto p-4 grid gap-[3.2rem] lmd:mt-[12rem] mt-[6rem]">
+      <div className="max-w-[76.8rem] mx-auto p-4 grid gap-[3.2rem] lmd:mt-[7rem] mt-[6rem]">
         <div className="grid gap-[3.2rem]">
           <h1 className="text-[#232536] font-Sen text-[4.8rem] font-bold leading-[6.4rem] tracking-[.2rem]">
             Lorem ipsum dolor sit amet

@@ -5,7 +5,6 @@ import {
   CONTACT,
   HOME,
   PRIVACY,
-  SUBSCRIBE,
 } from "./assets/constants/routePaths";
 
 import Navbar from "./components/Navbar";
@@ -17,6 +16,7 @@ import {
   HomePage,
   Privacy_Policy_Page,
 } from "./pages";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -27,8 +27,9 @@ function App() {
         <Route path={BLOG} element={<BlogPage />} />
         <Route path={ABOUT} element={<AboutPage />} />
         <Route path={CONTACT} element={<ContactPage />} />
-        <Route path={SUBSCRIBE} element={<Privacy_Policy_Page />} />
+        <Route path={PRIVACY} element={<Privacy_Policy_Page />} />
       </Routes>
+      <Footer />
     </>
   );
 }

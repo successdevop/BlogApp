@@ -131,7 +131,7 @@ function BlogPostPage() {
       </div>
 
       {/* join our team */}
-      <div className="my-[6rem]">
+      <div className="my-[10rem]">
         <JoinOurTeam />
       </div>
     </div>
