@@ -1,9 +1,13 @@
+import { nextSlide, prevSlide } from "../features/slider/sliderSlice";
 import { LeftArrorIcon, RightArrorIcon } from "../utility/icons";
-import { imgA } from "../utility/images";
+import { useDispatch, useSelector } from "react-redux";
 
 function Testimonials() {
+  const { data, count } = useSelector((store) => store.slider);
+  const dispatch = useDispatch();
+
   return (
-    <div className="bg-[#FBF6EA] p-12 grid gap-[3rem] lmd:grid-cols-[1.5fr_2fr] lmd:p-[7rem]">
+    <div className="bg-[#FBF6EA]  p-12 grid gap-[3rem] lmd:grid-cols-[1.5fr_2fr] lmd:p-[7rem]">
       <div className="grid justify-items-center text-center border-b-4 pb-[3rem] lmd:block lmd:text-left lmd:pb-0 lmd:border-r-2 lmd:border-b-0 lmd:pr-[3rem]">
         <h6 className="text-[#232536] text-[1.6rem] font-semibold leading-[2rem] tracking-[.3rem] uppercase">
           TESTIMONIALs
@@ -18,45 +22,61 @@ function Testimonials() {
       </div>
 
       {/* carousel box */}
-      <div>
-        <div className="grid gap-[4rem] justify-items-center text-center">
-          <p className="max-w-[46.9rem] font-Sen text-[2.4rem] font-bold leading-[3.2rem] text-[#232536]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
-          <div className="mt-[5rem] relative lmd:justify-self-stretch">
-            <div className="flex gap-[1.6rem] items-center">
-              <img
-                src={imgA}
-                alt="testimonial images"
-                className="w-[4.8rem] h-[4.8rem] rounded-full"
-              />
-              <div>
-                <h5 className="text-[#232536] font-Sen text-[2rem] font-bold leading-[1.6rem]">
-                  Jonathan Vallem
-                </h5>
-                <p className="text-[#6D6E76] text-[1.4rem] leading-[2.8rem] lmd:text-left">
-                  New york, USA
-                </p>
+      <div className="relative h-[52.6rem] md:h-[33rem] lmd:h-[36.2rem] lg:h-[33rem] flex justify-center items-end overflow-hidden">
+        {data.map((slide, personIndex) => {
+          const { id, img, name, quote, title } = slide;
+          return (
+            <div
+              className="grid gap-[4rem] justify-items-center text-center absolute top-0 h-[49rem] md:h-[33rem] lmd:h-[36.2rem] lg:h-[33rem] w-full transition-all"
+              key={id}
+              style={{
+                transform: `translateX(${100 * (personIndex - count)}%)`,
+              }}
+            >
+              <p className="max-w-[46.9rem] font-Sen text-[2.4rem] font-bold leading-[3.2rem] text-[#232536]">
+                {quote}
+              </p>
+              <div className="mt-[5rem] relative lmd:justify-self-stretch">
+                <div className="flex gap-[1.6rem] items-center">
+                  <img
+                    src={img}
+                    alt="testimonial images"
+                    className="w-[4.8rem] h-[4.8rem] rounded-full object-cover"
+                  />
+                  <div>
+                    <h5 className="text-[#232536] font-Sen text-[2rem] font-bold leading-[1.6rem]">
+                      {name}
+                    </h5>
+                    <p className="text-[#6D6E76] text-[1.6rem] leading-[2.8rem] lmd:text-left capitalize">
+                      {title}
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
-            <div className="flex gap-4 mt-4 justify-center h-[2.6rem] lmd:absolute lmd:bottom-0 lmd:right-[0rem] lmd:justify-self-end">
-              <span className="h-[2.6rem]">
-                <LeftArrorIcon
-                  className={
-                    "h-[2rem] w-[2rem] bg-white rounded-full p-1 transition-all active:h-[2.5rem] active:w-[2.5rem] hover:text-white hover:bg-[#232536]"
-                  }
-                />
-              </span>
-              <span className="">
-                <RightArrorIcon
-                  className={
-                    "h-[2rem] w-[2rem] bg-white rounded-full p-1 transition-all active:h-[2.5rem] active:w-[2.5rem] hover:text-white hover:bg-[#232536]"
-                  }
-                />
-              </span>
-            </div>
-          </div>
+          );
+        })}
+        <div className="flex gap-4 justify-center h-[2.6rem] lmd:absolute lmd:bottom-0 lmd:right-[0rem] lmd:justify-self-end">
+          <span
+            className="h-[2.6rem] w-[3rem] flex justify-center items-center"
+            onClick={() => dispatch(prevSlide())}
+          >
+            <LeftArrorIcon
+              className={
+                "h-[2rem] w-[2rem] bg-white rounded-full p-1 transition-all active:h-[2.5rem] active:w-[2.5rem] hover:text-white hover:bg-[#232536]"
+              }
+            />
+          </span>
+          <span
+            className="h-[2.6rem] w-[3rem] flex justify-center items-center"
+            onClick={() => dispatch(nextSlide())}
+          >
+            <RightArrorIcon
+              className={
+                "h-[2rem] w-[2rem] bg-white rounded-full p-1 transition-all active:h-[2.5rem] active:w-[2.5rem] hover:text-white hover:bg-[#232536]"
+              }
+            />
+          </span>
         </div>
       </div>
     </div>

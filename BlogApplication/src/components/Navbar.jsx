@@ -11,7 +11,7 @@ function Navbar() {
 
   return (
     <div className="bg-[#232536]">
-      <nav className="p-8 mx-auto max-w-[128rem] md:px-16 lmd:flex justify-between">
+      <nav className="p-8 mx-auto max-w-[120rem] md:px-16 lmd:flex justify-between">
         <div className="flex justify-between items-center">
           <BrandLogo />
           <div

@@ -123,7 +123,7 @@ function BlogPostPage() {
         <h2 className="text-[#000] font-Sen text-[3.6rem] font-bold leading-[4.8rem] tracking-[-.2rem]">
           What to read next
         </h2>
-        <div className="mt-[5rem] border-b-2 pb-[2rem] lmd:flex gap-[3rem]">
+        <div className="mt-[5rem] px-4 border-b-2 pb-[2rem] lmd:flex gap-[3rem]">
           <WhatNextPost />
           <WhatNextPost />
           <WhatNextPost />
