@@ -12,6 +12,11 @@ import authorE from "../assets/images/authorsImg/authorE.png";
 import authorF from "../assets/images/authorsImg/authorF.png";
 import authorG from "../assets/images/authorsImg/authorG.png";
 import authorH from "../assets/images/authorsImg/authorH.png";
+import userA from "../assets/images/testimonialImgs/userA.jpg";
+import userB from "../assets/images/testimonialImgs/userB.jpg";
+import userC from "../assets/images/testimonialImgs/userC.jpg";
+import userD from "../assets/images/testimonialImgs/userD.jpg";
+import userE from "../assets/images/testimonialImgs/userE.jpg";
 
 export {
   imgA,
@@ -28,4 +33,9 @@ export {
   authorF,
   authorG,
   authorH,
+  userA,
+  userB,
+  userC,
+  userD,
+  userE,
 };

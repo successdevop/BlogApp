@@ -1,6 +1,6 @@
 const Privacy_Policy_Page = () => {
   return (
-    <div>
+    <div className="mb-[10rem]">
       <div className="bg-[#F4F0F8] py-[8rem]">
         <h1 className="text-[#232536] text-center font-Sen text-[4.8rem] font-bold leading-[6.4rem] tracking-[-.2rem]">
           Privacy Policy

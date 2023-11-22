@@ -10,7 +10,7 @@ function HeroSection() {
       }}
     >
       <div
-        className={`p-16 text-center grid gap-12 justify-items-center lg:gap-[5rem] lg:py-[7rem] lg:justify-items-start lg:text-left max-w-[128rem] mx-auto`}
+        className={`p-16 text-center grid gap-12 justify-items-center lg:gap-[5rem] lg:py-[7rem] lg:justify-items-start lg:text-left max-w-[120rem] mx-auto`}
       >
         <p className="text-[#e2e2e2] text-[1.6rem] uppercase font-medium leading-[2rem] tracking-[.3rem] md:text-[1.6rem]">
           posted on <span className="font-black text-white">startup</span>
