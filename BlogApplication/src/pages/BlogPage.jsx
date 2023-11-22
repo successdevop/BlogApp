@@ -1,14 +1,16 @@
 import GlobalButton from "../components/GlobalButton";
-import { featurePageImage, twoWomen } from "../utility/images";
 import Categories from "../components/Categories";
 import JoinOurTeam from "../components/JoinOurTeam";
+import { useSelector } from "react-redux";
 
 function BlogPage() {
+  const { dataBase } = useSelector((store) => store.pagination);
+
   return (
     <div>
       {/* featured page */}
       <section className="bg-[#F4F0F8]">
-        <div className="p-[4rem] lmd:flex gap-20 max-w-[128rem] mx-auto">
+        <div className="p-[4rem] lmd:flex gap-20 max-w-[128rem] mx-auto xlg:gap-[7rem]">
           <div>
             <h5 className="text-[#232536] text-[1.6rem] font-medium leading-8 tracking-[.3rem] uppercase mb-8">
               Featured Post
@@ -27,7 +29,11 @@ function BlogPage() {
             <GlobalButton text="Read More >" className={"bg-[#FFD050]"} />
           </div>
           <div className="mt-[4rem] lmd:mt-0">
-            <img src={featurePageImage} alt="features img" />
+            <img
+              src={dataBase[0].posts[0].postImage}
+              alt="features img"
+              className="lmd:h-[33rem] lmd:w-[33rem] object-cover lg:min-h-full lg:min-w-[40rem]"
+            />
           </div>
         </div>
       </section>
@@ -40,29 +46,31 @@ function BlogPage() {
           </h1>
           <hr />
         </div>
-        <div>
-          <article className="lmd:flex lmd:gap-[4rem] lmd:items-center">
-            <div>
-              <img
-                src={twoWomen}
-                alt="two women in front of a board"
-                className="w-full"
-              />
-            </div>
-            <div className="mt-10 lmd:mt-0">
-              <h5 className="text-[#592EA9] text-[1.6rem] font-semibold leading-8 tracking-[.3rem] uppercase mb-8">
-                Featured Post
-              </h5>
-              <h2 className="max-w-[62.4rem] font-Sen text-[3.6rem] font-bold leading-[4.8rem] tracking-[-.2rem] mb-[1.6rem]">
-                Step-by-step guide to choosing great font pairs
-              </h2>
-              <p className="text-[#6D6E76] max-w-[62.4rem] text-[1.6rem] leading-[2.8rem] mb-[3.2rem] lmd:m-0">
-                Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                cupidatat non proident.
-              </p>
-            </div>
-          </article>
+        <div className="grid gap-12 lg:gap-[5rem]">
+          {dataBase[3].posts.map((post, i) => (
+            <article className="lg:flex lg:gap-[4rem] lg:items-center" key={i}>
+              <div className="">
+                <img
+                  src={post.postImage}
+                  alt="two women in front of a board"
+                  className="min-h-[28rem] min-w-full object-cover lg:h-[28rem] lg:w-[39.7rem]"
+                />
+              </div>
+              <div className="mt-10 lg:mt-4">
+                <h5 className="text-[#592EA9] text-[1.6rem] font-semibold leading-8 tracking-[.3rem] uppercase mb-8">
+                  {post.postCategory}
+                </h5>
+                <h2 className="max-w-[62.4rem] font-Sen text-[3.6rem] font-bold leading-[4.8rem] tracking-[-.2rem] mb-[1.6rem]">
+                  {post.postTitle}
+                </h2>
+                <p className="text-[#6D6E76] max-w-[62.4rem] text-[1.6rem] leading-[2.8rem] mb-[3.2rem] lmd:m-0">
+                  Duis aute irure dolor in reprehenderit in voluptate velit esse
+                  cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                  occaecat cupidatat non proident.
+                </p>
+              </div>
+            </article>
+          ))}
         </div>
         <div className="flex items-center justify-center gap-10 mt-12">
           <span className="text-[#6D6E76] cursor-pointer font-Sen text-[2rem] hover:text-[#232536] font-semibold leading-[3.2rem]">

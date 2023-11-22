@@ -1,7 +1,6 @@
 import JoinOurTeam from "../components/JoinOurTeam";
 import WhatNextPost from "../components/WhatNextPost";
 import { StartUpIcon } from "../utility/icons";
-import { featurePageImage, twoWomen } from "../utility/images";
 
 function BlogPostPage() {
   return (
@@ -10,7 +9,7 @@ function BlogPostPage() {
       <div className="pt-16 pb-[6.4rem] px-4 max-w-[76rem] mx-auto">
         <div className="flex gap-4 items-center">
           <img
-            src={twoWomen}
+            src={""}
             alt="women"
             className="h-[4.8rem] w-[4.8rem] rounded-full object-cover"
           />
@@ -36,7 +35,7 @@ function BlogPostPage() {
 
       {/* body */}
       <div className="max-w-[128rem] mx-auto">
-        <img src={featurePageImage} alt="f" className="w-full" />
+        <img src={""} alt="f" className="w-full" />
         <div>
           <div className="max-w-[80rem] mx-auto mt-[6rem]">
             <h2 className="mb-[1.6rem] text-[#232536] font-Sen text-[3.6rem] font-bold leading-[4.8rem] tracking-[-.2rem]">

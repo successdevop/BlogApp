@@ -1,4 +1,3 @@
-import { authorsList2 } from "../assets/data/data";
 import Authors from "../components/Authors";
 import JoinOurTeam from "../components/JoinOurTeam";
 import { aboutImgA, aboutImgB, discoveryImg } from "../utility/images";
@@ -155,7 +154,7 @@ function AboutPage() {
 
       {/* list of Authors section */}
       <div className="mt-[10rem]">
-        <Authors authorsData={authorsList2} />
+        <Authors />
       </div>
 
       {/* joinOurTeam section */}

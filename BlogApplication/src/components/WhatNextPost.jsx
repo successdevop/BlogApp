@@ -1,14 +1,8 @@
-import { twoWomen } from "../utility/images";
-
 function WhatNextPost() {
   return (
     <article>
       <div>
-        <img
-          src={twoWomen}
-          alt="two women in front of a board"
-          className="w-full"
-        />
+        <img src={""} alt="two women in front of a board" className="w-full" />
       </div>
       <div className="mt-10">
         <p className="text-[#4C4C4C] text-[1.4rem] font-medium leading-[2rem] mb-[1.6rem]">

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { nextSlide, prevSlide } from "../features/slider/sliderSlice";
 import { LeftArrorIcon, RightArrorIcon } from "../utility/icons";
 import { useDispatch, useSelector } from "react-redux";
@@ -5,6 +6,15 @@ import { useDispatch, useSelector } from "react-redux";
 function Testimonials() {
   const { data, count } = useSelector((store) => store.slider);
   const dispatch = useDispatch();
+
+  // Auto slide
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      dispatch(nextSlide());
+    }, 2000);
+
+    return () => clearInterval(intervalId);
+  }, [count]);
 
   return (
     <div className="bg-[#FBF6EA]  p-12 grid gap-[3rem] lmd:grid-cols-[1.5fr_2fr] lmd:p-[7rem]">
@@ -31,6 +41,8 @@ function Testimonials() {
               key={id}
               style={{
                 transform: `translateX(${100 * (personIndex - count)}%)`,
+                opacity: personIndex === count ? 1 : 0,
+                visibility: personIndex === count ? "visible" : "hidden",
               }}
             >
               <p className="max-w-[46.9rem] font-Sen text-[2.4rem] font-bold leading-[3.2rem] text-[#232536]">

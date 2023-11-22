@@ -1,6 +1,5 @@
 import HeroSection from "../components/HeroSection";
 import featuredImg from "../assets/images/featuredImgs/featureA.svg";
-import discoveryImg from "../assets/images/discovery.png";
 import GlobalButton from "../components/GlobalButton";
 import { Link } from "react-router-dom";
 import Categories from "../components/Categories";
@@ -9,8 +8,13 @@ import Authors from "../components/Authors";
 import FeaturedLogos from "../components/FeaturedLogos";
 import Testimonials from "../components/Testimonials";
 import JoinOurTeam from "../components/JoinOurTeam";
+import { discoveryImg } from "../utility/images";
+import { useSelector } from "react-redux";
+import { nanoid } from "nanoid";
 
 function HomePage() {
+  const { dataBase } = useSelector((store) => store.pagination);
+
   return (
     <>
       <HeroSection />
@@ -51,18 +55,20 @@ function HomePage() {
               View All
             </p>
           </div>
-          <div>
-            <Link>
-              <div className="p-4 transition-all hover:bg-[#FBF6EA]">
-                <p className="text-[#4C4C4C] text=[1.4rem] font-medium leading-[2rem]">
-                  By <span className="text-[#592EA9]">John Doe</span> l Aug 23,
-                  2021
-                </p>
-                <p className="text-[#232536] font-medium text-[1.6rem] lg:text-[2.4rem] lg:leading-[3.2rem]">
-                  8 Figma design systems that you can download for free today.
-                </p>
-              </div>
-            </Link>
+          <div className="flex flex-col gap-12">
+            {dataBase[0].posts.map((post) => (
+              <Link key={nanoid()}>
+                <div className="p-4 transition-all hover:bg-[#FBF6EA]">
+                  <p className="text-[#4C4C4C] text=[1.4rem] font-medium leading-[2rem]">
+                    By <span className="text-[#592EA9]">John Doe</span> l{" "}
+                    {post.postDate}
+                  </p>
+                  <p className="text-[#232536] font-medium text-[1.6rem] lg:text-[2.4rem] lg:leading-[3.2rem]">
+                    {post.postTitle}
+                  </p>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
