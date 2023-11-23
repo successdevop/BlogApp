@@ -3,7 +3,7 @@ import featuredImg from "../assets/images/featuredImgs/featureA.svg";
 import GlobalButton from "../components/GlobalButton";
 import { Link } from "react-router-dom";
 import Categories from "../components/Categories";
-import { authorsList1 } from "../assets/data/data";
+
 import Authors from "../components/Authors";
 import FeaturedLogos from "../components/FeaturedLogos";
 import Testimonials from "../components/Testimonials";
@@ -56,19 +56,18 @@ function HomePage() {
             </p>
           </div>
           <div className="flex flex-col gap-12">
-            {dataBase[0].posts.map((post) => (
-              <Link key={nanoid()}>
-                <div className="p-4 transition-all hover:bg-[#FBF6EA]">
-                  <p className="text-[#4C4C4C] text=[1.4rem] font-medium leading-[2rem]">
-                    By <span className="text-[#592EA9]">John Doe</span> l{" "}
-                    {post.postDate}
-                  </p>
-                  <p className="text-[#232536] font-medium text-[1.6rem] lg:text-[2.4rem] lg:leading-[3.2rem]">
-                    {post.postTitle}
-                  </p>
-                </div>
-              </Link>
-            ))}
+            <Link key={nanoid()}>
+              <div className="p-4 transition-all hover:bg-[#FBF6EA]">
+                <p className="text-[#4C4C4C] text=[1.4rem] font-medium leading-[2rem]">
+                  By <span className="text-[#592EA9]">John Doe</span> l May 23,
+                  2023
+                </p>
+                <p className="text-[#232536] font-medium text-[1.6rem] lg:text-[2.4rem] lg:leading-[3.2rem]">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Nesciunt, iste incidunt. Praesentium tempore a sapiente
+                </p>
+              </div>
+            </Link>
           </div>
         </div>
       </section>
@@ -151,7 +150,7 @@ function HomePage() {
 
       {/* list of Authors section */}
       <div className="mt-[10rem] max-w-[120rem] mx-auto">
-        <Authors authorsData={authorsList1} />
+        <Authors />
       </div>
 
       {/* list of features section */}

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-function GlobalButton({ href, className, text = "Subscribe" }) {
+function GlobalButton({ href, className, text = "Subscribe", onclick }) {
   const buttonStyles = {
     borderRadius: "3px",
     border: "1px solid transparent",
@@ -14,7 +14,7 @@ function GlobalButton({ href, className, text = "Subscribe" }) {
   };
 
   return (
-    <button style={buttonStyles} className={className ?? ""}>
+    <button style={buttonStyles} className={className ?? ""} onClick={onclick}>
       <Link className={`text-[#232536]`} to={href}>
         {text}
       </Link>
@@ -26,5 +26,6 @@ GlobalButton.propTypes = {
   href: PropTypes.string,
   text: PropTypes.string,
   className: PropTypes.string,
+  onclick: PropTypes.func,
 };
 export default GlobalButton;

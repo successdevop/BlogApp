@@ -1,48 +1,106 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import JoinOurTeam from "../components/JoinOurTeam";
 import WhatNextPost from "../components/WhatNextPost";
-import { StartUpIcon } from "../utility/icons";
+import {
+  BusinessIcon,
+  EconomyIcon,
+  StartUpIcon,
+  TechnologyIcon,
+} from "../utility/icons";
+
 import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+import GlobalButton from "../components/GlobalButton";
 
 function BlogPostPage() {
+  const [author, setAuthor] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [singlePost, setSinglePost] = useState(null);
+  const navigate = useNavigate();
+
   const { id } = useParams();
+
   const { dataBase } = useSelector((store) => store.pagination);
 
-  const singlePost = dataBase.find((post) => post.id === id);
+  useEffect(() => {
+    const fetchPost = async () => {
+      setLoading(true);
+      setTimeout(() => {
+        setSinglePost(() => dataBase.posts.find((post) => post.postId === id));
+        setLoading(false);
+      }, 2000);
+    };
+    fetchPost();
+  }, []);
 
+  useEffect(() => {
+    if (singlePost) {
+      setAuthor(() => {
+        return dataBase.authors.find(
+          (author) => author.id === singlePost.authorId
+        );
+      });
+      setLoading(false);
+    }
+  }, [singlePost]);
+
+  if (!singlePost && loading) {
+    return <h1>Loading.....</h1>;
+  }
+
+  if (!singlePost && !loading) {
+    return <h1>Not Found.....</h1>;
+  }
   return (
     <div>
       {/* top */}
       <div className="pt-16 pb-[6.4rem] px-4 max-w-[76rem] mx-auto">
         <div className="flex gap-4 items-center">
           <img
-            src={singlePost.authorImage}
+            src={author?.authorImage}
             alt="women"
             className="h-[8.8rem] w-[8.8rem] rounded-full object-cover"
           />
           <div>
             <h4 className="text-[#592EA9] font-Sen text-[2.8rem] font-bold leading-[4rem] tracking-[-.1rem]">
-              {singlePost.authorName}
+              {author?.authorName}
             </h4>
             <p className="text-[#6D6E76] text-[1.6rem] leading-[2rem]">
-              Posted on 27th January 2022
+              Posted on {singlePost.postDate}
             </p>
           </div>
         </div>
         <h1 className="mt-[2.4rem] mb-[3.4rem] max-w-[76.8rem] text-[#232536] font-Sen text-[4.8rem] font-bold leading-[6.4rem] tracking-[-.2rem]">
-          Step-by-step guide to choosing great font pairs
+          {/* Step-by-step guide to choosing great font pairs */}
+          {singlePost.postTitle}
         </h1>
         <div className="flex items-center gap-4">
-          <StartUpIcon />
+          {singlePost.postCategory === "Startup" && <StartUpIcon />}
+          {singlePost.postCategory === "Business" && <BusinessIcon />}
+          {singlePost.postCategory === "Technology" && <TechnologyIcon />}
+          {singlePost.postCategory === "Economy" && <EconomyIcon />}
+
           <span className="text-[#232536] font-Sen text-[2.4rem] font-bold leading-[3.2rem]">
-            Startup
+            {singlePost.postCategory}
           </span>
         </div>
+      </div>
+      {/* button */}
+      <div className="max-w-[128rem] mx-auto mb-16">
+        <GlobalButton
+          text="Go Back"
+          className={"bg-[#FFD050]"}
+          onclick={() => navigate(-1)}
+        />
       </div>
 
       {/* body */}
       <div className="max-w-[128rem] mx-auto">
-        <img src={""} alt="f" className="w-full" />
+        <img
+          src={singlePost.postImage}
+          alt="f"
+          className="w-full max-h-[50rem] object-cover"
+        />
         <div>
           <div className="max-w-[80rem] mx-auto mt-[6rem]">
             <h2 className="mb-[1.6rem] text-[#232536] font-Sen text-[3.6rem] font-bold leading-[4.8rem] tracking-[-.2rem]">

@@ -11,6 +11,7 @@ import Navbar from "./components/Navbar";
 
 import {
   AboutPage,
+  AuthorPage,
   BlogPage,
   BlogPostPage,
   ContactPage,
@@ -25,6 +26,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route index path={HOME} element={<HomePage />} />
+        <Route index path={`${HOME}/:id`} element={<AuthorPage />} />
+        <Route index path={`${HOME}/:id/:id`} element={<BlogPostPage />} />
         <Route path={BLOG} element={<BlogPage />} />
         <Route path={`${BLOG}/:id`} element={<BlogPostPage />} />
         <Route path={ABOUT} element={<AboutPage />} />

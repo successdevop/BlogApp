@@ -11,5 +11,4 @@ const paginationSlice = createSlice({
   reducers: {},
 });
 
-console.log(paginationSlice);
 export default paginationSlice.reducer;

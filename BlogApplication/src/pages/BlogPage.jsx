@@ -3,10 +3,10 @@ import Categories from "../components/Categories";
 import JoinOurTeam from "../components/JoinOurTeam";
 import { useSelector } from "react-redux";
 import SinglePost from "../components/SinglePost";
-import { nanoid } from "nanoid";
 
 function BlogPage() {
   const { dataBase } = useSelector((store) => store.pagination);
+  console.log(dataBase);
 
   return (
     <div>
@@ -31,11 +31,11 @@ function BlogPage() {
             <GlobalButton text="Read More >" className={"bg-[#FFD050]"} />
           </div>
           <div className="mt-[4rem] lmd:mt-0">
-            <img
+            {/* <img
               src={dataBase[0].posts[0].postImage}
               alt="features img"
               className="lmd:h-[33rem] lmd:w-[33rem] object-cover lg:min-h-full lg:min-w-[40rem]"
-            />
+            /> */}
           </div>
         </div>
       </section>
@@ -49,10 +49,8 @@ function BlogPage() {
           <hr />
         </div>
         <div className="grid gap-12 lg:gap-[5rem]">
-          {dataBase.map((item) => {
-            const { id, posts } = item;
-            console.log(posts);
-            return <SinglePost key={nanoid()} id={id} posts={posts} />;
+          {dataBase.posts.map((item) => {
+            return <SinglePost key={item.postId} {...item} />;
           })}
         </div>
         <div className="flex items-center justify-center gap-10 mt-12">

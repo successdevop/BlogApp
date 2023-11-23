@@ -13,8 +13,9 @@ function Authors() {
       </h5>
 
       <div className="grid gap-6 lmd:grid-cols-2 lg:grid-cols-3 xlg:grid-cols-4">
-        {dataBase.map((author) => (
+        {dataBase.authors.map((author) => (
           <Link
+            to={`${author.id}`}
             key={author.id}
             className="bg-[#F4F4F4] transition-all hover:bg-[#FBF6EA] grid gap-8 justify-items-center text-center p-8"
           >
