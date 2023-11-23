@@ -1,3 +1,4 @@
+import { CONTACT } from "../assets/constants/routePaths";
 import GlobalButton from "./GlobalButton";
 
 function JoinOurTeam() {
@@ -11,6 +12,7 @@ function JoinOurTeam() {
         tempor incididunt.
       </p>
       <GlobalButton
+        href={CONTACT}
         text="Join Now"
         className={"bg-[#FFD050] hover:bg-[#EDC14A] hover:text-red"}
       />

@@ -1,21 +1,28 @@
+import { useParams } from "react-router-dom";
 import JoinOurTeam from "../components/JoinOurTeam";
 import WhatNextPost from "../components/WhatNextPost";
 import { StartUpIcon } from "../utility/icons";
+import { useSelector } from "react-redux";
 
 function BlogPostPage() {
+  const { id } = useParams();
+  const { dataBase } = useSelector((store) => store.pagination);
+
+  const singlePost = dataBase.find((post) => post.id === id);
+
   return (
     <div>
       {/* top */}
       <div className="pt-16 pb-[6.4rem] px-4 max-w-[76rem] mx-auto">
         <div className="flex gap-4 items-center">
           <img
-            src={""}
+            src={singlePost.authorImage}
             alt="women"
-            className="h-[4.8rem] w-[4.8rem] rounded-full object-cover"
+            className="h-[8.8rem] w-[8.8rem] rounded-full object-cover"
           />
           <div>
             <h4 className="text-[#592EA9] font-Sen text-[2.8rem] font-bold leading-[4rem] tracking-[-.1rem]">
-              Andrew Jonson
+              {singlePost.authorName}
             </h4>
             <p className="text-[#6D6E76] text-[1.6rem] leading-[2rem]">
               Posted on 27th January 2022

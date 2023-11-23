@@ -1,5 +1,4 @@
 import { BrandLogo } from "../utility/icons";
-import { SUBSCRIBE } from "../assets/constants/routePaths";
 import { IoClose } from "react-icons/io5";
 import { FaBars } from "react-icons/fa6";
 import { useState } from "react";

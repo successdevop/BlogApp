@@ -2,6 +2,8 @@ import GlobalButton from "../components/GlobalButton";
 import Categories from "../components/Categories";
 import JoinOurTeam from "../components/JoinOurTeam";
 import { useSelector } from "react-redux";
+import SinglePost from "../components/SinglePost";
+import { nanoid } from "nanoid";
 
 function BlogPage() {
   const { dataBase } = useSelector((store) => store.pagination);
@@ -47,30 +49,11 @@ function BlogPage() {
           <hr />
         </div>
         <div className="grid gap-12 lg:gap-[5rem]">
-          {dataBase[3].posts.map((post, i) => (
-            <article className="lg:flex lg:gap-[4rem] lg:items-center" key={i}>
-              <div className="">
-                <img
-                  src={post.postImage}
-                  alt="two women in front of a board"
-                  className="min-h-[28rem] min-w-full object-cover lg:h-[28rem] lg:w-[39.7rem]"
-                />
-              </div>
-              <div className="mt-10 lg:mt-4">
-                <h5 className="text-[#592EA9] text-[1.6rem] font-semibold leading-8 tracking-[.3rem] uppercase mb-8">
-                  {post.postCategory}
-                </h5>
-                <h2 className="max-w-[62.4rem] font-Sen text-[3.6rem] font-bold leading-[4.8rem] tracking-[-.2rem] mb-[1.6rem]">
-                  {post.postTitle}
-                </h2>
-                <p className="text-[#6D6E76] max-w-[62.4rem] text-[1.6rem] leading-[2.8rem] mb-[3.2rem] lmd:m-0">
-                  Duis aute irure dolor in reprehenderit in voluptate velit esse
-                  cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                  occaecat cupidatat non proident.
-                </p>
-              </div>
-            </article>
-          ))}
+          {dataBase.map((item) => {
+            const { id, posts } = item;
+            console.log(posts);
+            return <SinglePost key={nanoid()} id={id} posts={posts} />;
+          })}
         </div>
         <div className="flex items-center justify-center gap-10 mt-12">
           <span className="text-[#6D6E76] cursor-pointer font-Sen text-[2rem] hover:text-[#232536] font-semibold leading-[3.2rem]">

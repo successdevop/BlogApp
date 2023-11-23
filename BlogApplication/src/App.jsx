@@ -12,6 +12,7 @@ import Navbar from "./components/Navbar";
 import {
   AboutPage,
   BlogPage,
+  BlogPostPage,
   ContactPage,
   HomePage,
   Privacy_Policy_Page,
@@ -25,6 +26,7 @@ function App() {
       <Routes>
         <Route index path={HOME} element={<HomePage />} />
         <Route path={BLOG} element={<BlogPage />} />
+        <Route path={`${BLOG}/:id`} element={<BlogPostPage />} />
         <Route path={ABOUT} element={<AboutPage />} />
         <Route path={CONTACT} element={<ContactPage />} />
         <Route path={PRIVACY} element={<Privacy_Policy_Page />} />
