@@ -1,12 +1,17 @@
 import GlobalButton from "../components/GlobalButton";
 import Categories from "../components/Categories";
 import JoinOurTeam from "../components/JoinOurTeam";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import SinglePost from "../components/SinglePost";
+import { setPageHandler } from "../features/pagination/paginationSlice";
 
 function BlogPage() {
-  const { dataBase } = useSelector((store) => store.pagination);
-  console.log(dataBase);
+  const { dataBase, page, maxPagePost } = useSelector(
+    (store) => store.pagination
+  );
+  console.log(page, "", maxPagePost, "", dataBase.posts.length / maxPagePost);
+
+  const dispatch = useDispatch();
 
   return (
     <div>
@@ -49,15 +54,32 @@ function BlogPage() {
           <hr />
         </div>
         <div className="grid gap-12 lg:gap-[5rem]">
-          {dataBase.posts.map((item) => {
-            return <SinglePost key={item.postId} {...item} />;
-          })}
+          {dataBase.posts
+            .slice(
+              `${page * maxPagePost - maxPagePost}`,
+              `${page * maxPagePost}`
+            )
+            .map((item) => {
+              return <SinglePost key={item.postId} {...item} />;
+            })}
         </div>
         <div className="flex items-center justify-center gap-10 mt-12">
-          <span className="text-[#6D6E76] cursor-pointer font-Sen text-[2rem] hover:text-[#232536] font-semibold leading-[3.2rem]">
+          <span
+            onClick={() => dispatch(setPageHandler(page - 1))}
+            className={`${
+              page > 1 ? "" : "opacity-0 invisible"
+            } text-[#6D6E76] cursor-pointer font-Sen text-[2rem] hover:text-[#232536] font-semibold leading-[3.2rem]`}
+          >
             {"< Prev"}
           </span>
-          <span className="text-[#6D6E76] cursor-pointer font-Sen text-[2rem] hover:text-[#232536] font-semibold leading-[3.2rem]">
+          <span
+            onClick={() => dispatch(setPageHandler(page + 1))}
+            className={`${
+              page < dataBase.posts.length / maxPagePost
+                ? ""
+                : "opacity-0 invisible"
+            } text-[#6D6E76] cursor-pointer font-Sen text-[2rem] hover:text-[#232536] font-semibold leading-[3.2rem]`}
+          >
             {"Next >"}
           </span>
         </div>

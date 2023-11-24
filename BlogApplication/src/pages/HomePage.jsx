@@ -11,6 +11,7 @@ import JoinOurTeam from "../components/JoinOurTeam";
 import { discoveryImg } from "../utility/images";
 import { useSelector } from "react-redux";
 import { nanoid } from "nanoid";
+import { BLOG } from "../assets/constants/routePaths";
 
 function HomePage() {
   const { dataBase } = useSelector((store) => store.pagination);
@@ -51,23 +52,35 @@ function HomePage() {
             <h2 className="font-bold text-[#232536] text-[2rem] lg:text-[2.9rem] lg:leading-[4rem] lg:tracking-[-.1rem]">
               All Posts
             </h2>
-            <p className="text-[#592EA9] lg:text-[1.3rem] lg:leading-[2rem] cursor-pointer">
+            <Link
+              to={BLOG}
+              className="text-[#592EA9] lg:text-[1.3rem] lg:leading-[2rem] cursor-pointer pr-16"
+            >
               View All
-            </p>
+            </Link>
           </div>
           <div className="flex flex-col gap-12">
-            <Link key={nanoid()}>
-              <div className="p-4 transition-all hover:bg-[#FBF6EA]">
-                <p className="text-[#4C4C4C] text=[1.4rem] font-medium leading-[2rem]">
-                  By <span className="text-[#592EA9]">John Doe</span> l May 23,
-                  2023
-                </p>
-                <p className="text-[#232536] font-medium text-[1.6rem] lg:text-[2.4rem] lg:leading-[3.2rem]">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Nesciunt, iste incidunt. Praesentium tempore a sapiente
-                </p>
-              </div>
-            </Link>
+            {dataBase.posts.slice(0, 4).map((post) => {
+              const author = dataBase.authors.find(
+                (name) => name.id === post.authorId
+              );
+              return (
+                <Link key={nanoid()} to={`allPost/${post.postId}`}>
+                  <div className="p-4 transition-all hover:bg-[#FBF6EA]">
+                    <p className="text-[#4C4C4C] text=[1.4rem] font-medium leading-[2rem]">
+                      By{" "}
+                      <span className="text-[#592EA9]">
+                        {author.authorName}
+                      </span>
+                      l {post.postDate}
+                    </p>
+                    <p className="text-[#232536] font-medium text-[1.6rem] lg:text-[2.4rem] lg:leading-[3.2rem]">
+                      {post.postTitle}
+                    </p>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -150,7 +163,7 @@ function HomePage() {
 
       {/* list of Authors section */}
       <div className="mt-[10rem] max-w-[120rem] mx-auto">
-        <Authors />
+        <Authors authorsData={dataBase.authors.slice(0, 4)} />
       </div>
 
       {/* list of features section */}

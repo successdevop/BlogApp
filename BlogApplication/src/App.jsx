@@ -26,8 +26,9 @@ function App() {
       <Navbar />
       <Routes>
         <Route index path={HOME} element={<HomePage />} />
-        <Route index path={`${HOME}/:id`} element={<AuthorPage />} />
-        <Route index path={`${HOME}/:id/:id`} element={<BlogPostPage />} />
+        <Route path={`${HOME}/:allPost/:id`} element={<BlogPostPage />} />
+        <Route path={`${HOME}/:id`} element={<AuthorPage />} />
+        <Route path={`${HOME}/:id/:id`} element={<BlogPostPage />} />
         <Route path={BLOG} element={<BlogPage />} />
         <Route path={`${BLOG}/:id`} element={<BlogPostPage />} />
         <Route path={ABOUT} element={<AboutPage />} />

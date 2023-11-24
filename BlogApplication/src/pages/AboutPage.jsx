@@ -1,3 +1,4 @@
+import { dataBase } from "../assets/data/dataBase";
 import Authors from "../components/Authors";
 import JoinOurTeam from "../components/JoinOurTeam";
 import { aboutImgA, aboutImgB, discoveryImg } from "../utility/images";
@@ -154,7 +155,7 @@ function AboutPage() {
 
       {/* list of Authors section */}
       <div className="mt-[10rem]">
-        <Authors />
+        <Authors authorsData={dataBase.authors} />
       </div>
 
       {/* joinOurTeam section */}

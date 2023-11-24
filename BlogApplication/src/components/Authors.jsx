@@ -1,11 +1,8 @@
 import PropTypes from "prop-types";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
 
-function Authors() {
-  const { dataBase } = useSelector((store) => store.pagination);
-
+function Authors({ authorsData }) {
   return (
     <div className="">
       <h5 className="text-[#232536] font-Sen text-[3.2rem] font-bold leading-[4.8rem] tracking-[-.2rem] text-center mb-8">
@@ -13,7 +10,7 @@ function Authors() {
       </h5>
 
       <div className="grid gap-6 lmd:grid-cols-2 lg:grid-cols-3 xlg:grid-cols-4">
-        {dataBase.authors.map((author) => (
+        {authorsData?.map((author) => (
           <Link
             to={`${author.id}`}
             key={author.id}
