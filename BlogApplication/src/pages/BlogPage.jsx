@@ -9,7 +9,6 @@ function BlogPage() {
   const { dataBase, page, maxPagePost } = useSelector(
     (store) => store.pagination
   );
-  console.log(page, "", maxPagePost, "", dataBase.posts.length / maxPagePost);
 
   const dispatch = useDispatch();
 
@@ -87,7 +86,7 @@ function BlogPage() {
 
       {/* categories */}
       <div className="max-w-[128rem] mx-auto">
-        <Categories />
+        <Categories text="All Categories" />
       </div>
 
       {/* join our team */}

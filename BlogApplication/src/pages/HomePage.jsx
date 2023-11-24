@@ -129,7 +129,7 @@ function HomePage() {
 
       {/* category section */}
       <section className="max-w-[120rem] mx-auto">
-        <Categories />
+        <Categories textAlign={"center"} />
       </section>
 
       {/* discover/about section */}

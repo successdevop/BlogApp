@@ -7,6 +7,7 @@ import {
 } from "../utility/icons";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import { CATEGORY } from "../assets/constants/routePaths";
 
 function Categories({ marginTop = 8, textAlign, text = "Choose A Catagory" }) {
   return (
@@ -18,7 +19,7 @@ function Categories({ marginTop = 8, textAlign, text = "Choose A Catagory" }) {
       </h4>
       <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
         {categoryData.map((category) => (
-          <Link key={category.id}>
+          <Link key={category.id} to={`${CATEGORY}/${category.header}`}>
             <div
               className={`border border-[#6D6E76] p-8 flex-[1_0_25%] group transition-all hover:bg-[#FFD050]`}
             >

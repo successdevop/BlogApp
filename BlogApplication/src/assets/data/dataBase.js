@@ -204,7 +204,6 @@ export const dataBase = {
     },
     {
       authorId: "1ADfSRKuXih4k1M3trvmn",
-      feature: "feature",
       postCategory: "Technology",
       postTitle:
         "What benefits can solar geoengineering provide? Can they outweigh the severe risks?",

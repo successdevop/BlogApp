@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import {
   ABOUT,
   BLOG,
+  CATEGORY,
   CONTACT,
   HOME,
   PRIVACY,
@@ -14,6 +15,7 @@ import {
   AuthorPage,
   BlogPage,
   BlogPostPage,
+  CategoryPage,
   ContactPage,
   HomePage,
   Privacy_Policy_Page,
@@ -33,6 +35,11 @@ function App() {
         <Route path={`${BLOG}/:id`} element={<BlogPostPage />} />
         <Route path={ABOUT} element={<AboutPage />} />
         <Route path={CONTACT} element={<ContactPage />} />
+        <Route path={`${CATEGORY}/:postCategory`} element={<CategoryPage />} />
+        <Route
+          path={`${CATEGORY}/:postCategory/:id`}
+          element={<BlogPostPage />}
+        />
         <Route path={PRIVACY} element={<Privacy_Policy_Page />} />
       </Routes>
       <Footer />
