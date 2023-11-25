@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import SinglePost from "../components/SinglePost";
 import { setPageHandler } from "../features/pagination/paginationSlice";
 import {
@@ -10,6 +10,7 @@ import {
 } from "../utility/icons";
 
 import { CATEGORY } from "../assets/constants/routePaths";
+import GlobalButton from "../components/GlobalButton";
 
 function CategoryPage() {
   const { postCategory } = useParams();
@@ -21,6 +22,8 @@ function CategoryPage() {
   const sortedArr = dataBase.posts.filter(
     (item) => item.postCategory === postCategory
   );
+
+  const navigate = useNavigate();
 
   return (
     <div className="mb-[10rem]">
@@ -37,6 +40,14 @@ function CategoryPage() {
             Blog {">"} Business
           </p>
         </div>
+      </div>
+      {/* navigate */}
+      <div className="max-w-[120rem] mx-auto mt-16">
+        <GlobalButton
+          text="Go Back"
+          className={"bg-[#FFD050] inline-flex"}
+          onclick={() => navigate(-1)}
+        />
       </div>
       <div className="max-w-[120rem] mx-auto mt-[6rem] xlg:grid xlg:grid-cols-[4fr_1fr] xlg:gap-8">
         <div className="p-[1rem]">

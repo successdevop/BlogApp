@@ -29,10 +29,10 @@ function BlogPostPage() {
       setTimeout(() => {
         setSinglePost(() => dataBase.posts.find((post) => post.postId === id));
         setLoading(false);
-      }, 2000);
+      }, 1000);
     };
     fetchPost();
-  }, []);
+  }, [dataBase.posts, id]);
 
   useEffect(() => {
     if (singlePost) {
@@ -43,14 +43,20 @@ function BlogPostPage() {
       });
       setLoading(false);
     }
-  }, [singlePost]);
+  }, [dataBase.authors, singlePost]);
 
   if (!singlePost && loading) {
-    return <h1>Loading.....</h1>;
+    return (
+      <h1 className="pt-16 pb-[6.4rem] px-4 max-w-[76rem] mx-auto text-[4rem] text-[#592EA9]">
+        Loading.....
+      </h1>
+    );
   }
 
   if (!singlePost && !loading) {
-    return <h1>Not Found.....</h1>;
+    <h1 className="pt-16 pb-[6.4rem] px-4 max-w-[76rem] mx-auto text-[4rem] text-[#592EA9]">
+      Not Found.....
+    </h1>;
   }
   return (
     <div>
@@ -67,22 +73,21 @@ function BlogPostPage() {
               {author?.authorName}
             </h4>
             <p className="text-[#6D6E76] text-[1.6rem] leading-[2rem]">
-              Posted on {singlePost.postDate}
+              Posted on {singlePost?.postDate}
             </p>
           </div>
         </div>
         <h1 className="mt-[2.4rem] mb-[3.4rem] max-w-[76.8rem] text-[#232536] font-Sen text-[4.8rem] font-bold leading-[6.4rem] tracking-[-.2rem]">
-          {/* Step-by-step guide to choosing great font pairs */}
-          {singlePost.postTitle}
+          {singlePost?.postTitle}
         </h1>
         <div className="flex items-center gap-4">
-          {singlePost.postCategory === "Startup" && <StartUpIcon />}
-          {singlePost.postCategory === "Business" && <BusinessIcon />}
-          {singlePost.postCategory === "Technology" && <TechnologyIcon />}
-          {singlePost.postCategory === "Economy" && <EconomyIcon />}
+          {singlePost?.postCategory === "Startup" && <StartUpIcon />}
+          {singlePost?.postCategory === "Business" && <BusinessIcon />}
+          {singlePost?.postCategory === "Technology" && <TechnologyIcon />}
+          {singlePost?.postCategory === "Economy" && <EconomyIcon />}
 
           <span className="text-[#232536] font-Sen text-[2.4rem] font-bold leading-[3.2rem]">
-            {singlePost.postCategory}
+            {singlePost?.postCategory}
           </span>
         </div>
       </div>
@@ -98,7 +103,7 @@ function BlogPostPage() {
       {/* body */}
       <div className="max-w-[128rem] mx-auto">
         <img
-          src={singlePost.postImage}
+          src={singlePost?.postImage}
           alt="f"
           className="w-full max-h-[50rem] object-cover"
         />
@@ -184,12 +189,12 @@ function BlogPostPage() {
       </div>
 
       {/* what to read next */}
-      <div className="mt-[10rem] max-w-[128rem] mx-auto">
+      <div className="mt-[10rem] max-w-[120rem] mx-auto">
         <h2 className="text-[#000] font-Sen text-[3.6rem] font-bold leading-[4.8rem] tracking-[-.2rem]">
           What to read next
         </h2>
-        <div className="mt-[5rem] px-4 border-b-2 pb-[2rem] lmd:flex gap-[3rem]">
-          {dataBase.posts.slice(0, 3).map((post) => (
+        <div className="mt-[5rem] px-4 border-b-2 pb-[2rem] flex flex-col lg:gap-[4rem]">
+          {dataBase.posts.slice(15, 18).map((post) => (
             <Link
               key={post.postId}
               className="lg:flex lg:gap-[4rem] lg:items-center"

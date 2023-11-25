@@ -4,6 +4,7 @@ import JoinOurTeam from "../components/JoinOurTeam";
 import { useDispatch, useSelector } from "react-redux";
 import SinglePost from "../components/SinglePost";
 import { setPageHandler } from "../features/pagination/paginationSlice";
+import { MdArrowRight } from "react-icons/md";
 
 function BlogPage() {
   const { dataBase, page, maxPagePost } = useSelector(
@@ -32,20 +33,27 @@ function BlogPage() {
               cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
               cupidatat non proident.
             </p>
-            <GlobalButton text="Read More >" className={"bg-[#FFD050]"} />
+            <GlobalButton
+              text="Read More"
+              className={"bg-[#FFD050] inline-flex items-center"}
+              paddingLR={1.5}
+              href={`${dataBase.posts[8].postId}`}
+            >
+              <MdArrowRight />
+            </GlobalButton>
           </div>
           <div className="mt-[4rem] lmd:mt-0">
-            {/* <img
-              src={dataBase[0].posts[0].postImage}
+            <img
+              src={dataBase.posts[8].postImage}
               alt="features img"
               className="lmd:h-[33rem] lmd:w-[33rem] object-cover lg:min-h-full lg:min-w-[40rem]"
-            /> */}
+            />
           </div>
         </div>
       </section>
 
       {/* All Pages section */}
-      <section className="p-[4rem] max-w-[128rem] mx-auto">
+      <section className="p-[4rem] max-w-[123rem] mx-auto">
         <div className="mb-[4rem]">
           <h1 className="mb-8 text-[#232536] font-Sen text-[4.8rem] font-bold leading-[6.4rem] tracking-[-.2ren]">
             All posts

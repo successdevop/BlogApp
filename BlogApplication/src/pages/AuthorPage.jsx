@@ -1,4 +1,4 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import SinglePost from "../components/SinglePost";
 import {
@@ -8,21 +8,25 @@ import {
   FaTwitter,
 } from "react-icons/fa6";
 import GlobalButton from "../components/GlobalButton";
+import { setPageHandler } from "../features/pagination/paginationSlice";
 
 const AuthorPage = () => {
   const { id } = useParams();
-  const { dataBase } = useSelector((store) => store.pagination);
+  const { dataBase, page, maxPagePost } = useSelector(
+    (store) => store.pagination
+  );
   const author = dataBase.authors.find((author) => author.id === id);
   const navigate = useNavigate();
 
   const newDataBase = dataBase.posts.filter((item) => item.authorId === id);
+  const dispatch = useDispatch();
 
   return (
     <div>
       <div className="bg-[#F4F0F8]">
         <div className="max-w-[77.3rem] mx-auto">
-          <div className="flex gap-12 py-[5rem]">
-            <div className="mt-[4rem] lmd:mt-0">
+          <div className="md:flex md:gap-12 py-[5rem] px-[4rem]">
+            <div className="">
               <img src={author.authorImage} alt="author img" />
             </div>
             <div>
@@ -49,10 +53,11 @@ const AuthorPage = () => {
           </div>
         </div>
       </div>
-      <div className="max-w-[128rem] mx-auto my-16 pl-[5rem]">
+      <div className="max-w-[128rem] mx-auto mt-16 pl-[5rem]">
         <GlobalButton
+          paddingLR={1}
           text="Go Back"
-          className={"bg-[#FFD050]"}
+          className={"bg-[#FFD050] inline-flex"}
           onclick={() => navigate(-1)}
         />
       </div>
@@ -64,15 +69,32 @@ const AuthorPage = () => {
           <hr />
         </div>
         <div className="grid gap-12 lg:gap-[5rem]">
-          {newDataBase.map((item) => {
-            return <SinglePost key={item.postId} {...item} />;
-          })}
+          {newDataBase
+            .slice(
+              `${page * maxPagePost - maxPagePost}`,
+              `${page * maxPagePost}`
+            )
+            .map((item) => {
+              return <SinglePost key={item.postId} {...item} />;
+            })}
         </div>
         <div className="flex items-center justify-center gap-10 mt-12">
-          <span className="text-[#6D6E76] cursor-pointer font-Sen text-[2rem] hover:text-[#232536] font-semibold leading-[3.2rem]">
+          <span
+            onClick={() => dispatch(setPageHandler(page - 1))}
+            className={`${
+              page > 1 ? "" : "opacity-0 invisible"
+            } text-[#6D6E76] cursor-pointer font-Sen text-[2rem] hover:text-[#232536] font-semibold leading-[3.2rem]`}
+          >
             {"< Prev"}
           </span>
-          <span className="text-[#6D6E76] cursor-pointer font-Sen text-[2rem] hover:text-[#232536] font-semibold leading-[3.2rem]">
+          <span
+            onClick={() => dispatch(setPageHandler(page + 1))}
+            className={`${
+              page < newDataBase.length / maxPagePost
+                ? ""
+                : "opacity-0 invisible"
+            } text-[#6D6E76] cursor-pointer font-Sen text-[2rem] hover:text-[#232536] font-semibold leading-[3.2rem]`}
+          >
             {"Next >"}
           </span>
         </div>

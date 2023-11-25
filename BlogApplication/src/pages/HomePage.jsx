@@ -44,7 +44,7 @@ function HomePage() {
                 cupidatat non proident.
               </p>
               <GlobalButton
-                href={BLOG}
+                href={`allPost/${dataBase.posts[29].postId}`}
                 paddingLR={1}
                 text="Read More"
                 className={"bg-[#FFD050] inline-flex items-center"}
