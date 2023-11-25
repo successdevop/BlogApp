@@ -14,7 +14,7 @@ function SinglePost({
         <img
           src={postImage}
           alt="post image"
-          className="min-h-[28rem] min-w-full object-cover lg:h-[28rem] lg:w-[39.7rem]"
+          className="min-h-[28rem] max-h-[30rem] min-w-full object-cover lg:h-[28rem] lg:w-[39.7rem]"
         />
       </div>
       <div className="mt-10 lg:mt-4">

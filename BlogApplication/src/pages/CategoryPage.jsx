@@ -9,15 +9,13 @@ import {
   TechnologyIcon,
 } from "../utility/icons";
 
-const iconArr = [StartUpIcon, BusinessIcon, TechnologyIcon, EconomyIcon];
-console.log(iconArr);
+import { CATEGORY } from "../assets/constants/routePaths";
 
 function CategoryPage() {
   const { postCategory } = useParams();
   const { dataBase, page, maxPagePost } = useSelector(
     (store) => store.pagination
   );
-
   const dispatch = useDispatch();
 
   const sortedArr = dataBase.posts.filter(
@@ -25,9 +23,9 @@ function CategoryPage() {
   );
 
   return (
-    <div>
-      <div>
-        <div className="bg-[#F4F0F8] py-[8rem] grid gap-6">
+    <div className="mb-[10rem]">
+      <div className="bg-[#F4F0F8] py-[5rem] px-8 grid gap-6">
+        <div className="max-w-[120rem] mx-auto">
           <h2 className="text-[#232536] text-center font-Sen text-[5.2rem] font-bold leading-[6.4rem] tracking-[-.2rem]">
             {postCategory}
           </h2>
@@ -40,9 +38,9 @@ function CategoryPage() {
           </p>
         </div>
       </div>
-      <div>
-        <div className="p-[4rem] max-w-[128rem] mx-auto">
-          <div className="grid gap-12 lg:gap-[5rem]">
+      <div className="max-w-[120rem] mx-auto mt-[6rem] xlg:grid xlg:grid-cols-[4fr_1fr] xlg:gap-8">
+        <div className="p-[1rem]">
+          <div className="grid gap-16 lg:gap-[5rem]">
             {sortedArr
               .slice(
                 `${page * maxPagePost - maxPagePost}`,
@@ -74,21 +72,33 @@ function CategoryPage() {
           </div>
         </div>
         <div>
-          <Link to={``}>
-            <div
-              className={`border border-[#6D6E76] p-8 flex-[1_0_25%] group transition-all hover:bg-[#FFD050]`}
-            >
-              {/* <category.icon
-                className={
-                  "h-[8rem] w-[8rem] bg-[#FBF6EA] rounded-[1rem] p-6 group-hover:bg-white"
-                }
-              /> */}
-              icon
-              <h5 className="text-[#232536] font-Sen text-[2.8rem] font-bold leading-[4rem] tracking-[-.rem] mt-6">
-                {/* {category.header} */}hello
-              </h5>
-            </div>
-          </Link>
+          <div className="px-[1rem] text-[#232536] font-Sen text-[3.6rem] font-bold leading-[4.8rem] tracking-[-.2rem] mt-4 xlg:mt-0">
+            Categories
+          </div>
+          <div className="grid gap-8 grid-cols-2 mt-[2rem] px-[1rem] xlg:grid-cols-1 xlg:self-start">
+            {categoryData.map((category) => (
+              <Link
+                key={category.postCategory}
+                to={`${CATEGORY}/${category.postCategory}`}
+                className={`${
+                  postCategory === category.postCategory ? "bg-[#FFD050]" : ""
+                }`}
+              >
+                <div
+                  className={`border border-[#6D6E76] p-4 gap-4 items-center flex group transition-all hover:bg-[#FFD050]`}
+                >
+                  <category.icon
+                    className={
+                      "h-[5rem] w-[5rem] bg-[#FBF6EA] rounded-[1rem] p-5 group-hover:bg-white"
+                    }
+                  />
+                  <h5 className="text-[#232536] font-Sen text-[2rem] font-bold leading-[3rem] tracking-[-.1rem]">
+                    {category.postCategory}
+                  </h5>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </div>
@@ -96,3 +106,22 @@ function CategoryPage() {
 }
 
 export default CategoryPage;
+
+const categoryData = [
+  {
+    icon: StartUpIcon,
+    postCategory: "Startup",
+  },
+  {
+    icon: BusinessIcon,
+    postCategory: "Business",
+  },
+  {
+    icon: EconomyIcon,
+    postCategory: "Economy",
+  },
+  {
+    icon: TechnologyIcon,
+    postCategory: "Technology",
+  },
+];

@@ -11,7 +11,8 @@ import JoinOurTeam from "../components/JoinOurTeam";
 import { discoveryImg } from "../utility/images";
 import { useSelector } from "react-redux";
 import { nanoid } from "nanoid";
-import { BLOG } from "../assets/constants/routePaths";
+import { ABOUT, BLOG } from "../assets/constants/routePaths";
+import { MdArrowRight } from "react-icons/md";
 
 function HomePage() {
   const { dataBase } = useSelector((store) => store.pagination);
@@ -22,27 +23,34 @@ function HomePage() {
 
       {/* featured post section */}
       <section className="max-w-[120rem] mx-auto lg:px-4 lg:flex lg:gap-6">
-        <div className="my-[2.5rem] lg:mb-[0] lg:mt-[5rem] px-2">
-          <h4 className="mb-[.5rem] font-bold text-[#232536] text-[2rem] lg:text-[3rem] lg:leading-[4rem] lg:tracking-[-.1rem]">
+        <div className="my-[5rem] lg:mb-[0]">
+          <h4 className="mb-[1.5rem] font-bold text-[#232536] text-[2rem] lg:text-[3rem] lg:leading-[4rem] lg:tracking-[-.1rem]">
             Featured Post
           </h4>
-          <div className="border border-[#6D6E76] p-4">
+          <div className="border border-[#6D6E76] p-6">
             <img src={featuredImg} alt="featured image" className="w-full" />
-            <div className="mt-[1rem] pb-[1rem]">
-              <p className="text-[#4C4C4C] text=[1.4rem] font-medium leading-[2rem]">
+            <div className="py-[1rem]">
+              <p className="text-[#4C4C4C] text-[1.4rem] font-medium leading-[2rem]">
                 By <span className="text-[#592EA9]">John Doe</span> l May 23,
                 2022
               </p>
-              <p className="mb-[1rem] text-[#232536] text-[1.6rem] leading-8 font-medium lg:text-[2.5rem] lg:font-semibold lg:leading-[3.5rem] tracking-[-.05rem]">
+              <p className="my-[1rem] text-[#232536] text-[1.8rem] leading-10 font-semibold lg:text-[2.5rem] lg:font-bold lg:leading-[3.5rem] tracking-[-.05rem]">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor.
               </p>
-              <p className="mb-[1.2rem] text-[#6D6E76] text-[13px] lg:text-[1.3rem] lg:leading-[2rem]">
+              <p className="mb-[1.2rem] text-[#6D6E76] text-[1.4rem] leading-8 lg:text-[1.3rem] lg:leading-[2rem]">
                 Duis aute irure dolor in reprehenderit in voluptate velit esse
                 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
                 cupidatat non proident.
               </p>
-              <GlobalButton text="Read More >" className={"bg-[#FFD050]"} />
+              <GlobalButton
+                href={BLOG}
+                paddingLR={1}
+                text="Read More"
+                className={"bg-[#FFD050] inline-flex items-center"}
+              >
+                <MdArrowRight />
+              </GlobalButton>
             </div>
           </div>
         </div>
@@ -54,12 +62,12 @@ function HomePage() {
             </h2>
             <Link
               to={BLOG}
-              className="text-[#592EA9] lg:text-[1.3rem] lg:leading-[2rem] cursor-pointer pr-16"
+              className="text-[#592EA9] text-[1.6rem] lg:leading-[2rem] cursor-pointer pr-16"
             >
               View All
             </Link>
           </div>
-          <div className="flex flex-col gap-12">
+          <div className="flex flex-col gap-10">
             {dataBase.posts.slice(0, 4).map((post) => {
               const author = dataBase.authors.find(
                 (name) => name.id === post.authorId
@@ -67,14 +75,14 @@ function HomePage() {
               return (
                 <Link key={nanoid()} to={`allPost/${post.postId}`}>
                   <div className="p-4 transition-all hover:bg-[#FBF6EA]">
-                    <p className="text-[#4C4C4C] text=[1.4rem] font-medium leading-[2rem]">
+                    <p className="text-[#4C4C4C] text-[1.2rem] font-medium leading-[2rem] mb-2">
                       By{" "}
                       <span className="text-[#592EA9]">
                         {author.authorName}
                       </span>
                       l {post.postDate}
                     </p>
-                    <p className="text-[#232536] font-medium text-[1.6rem] lg:text-[2.4rem] lg:leading-[3.2rem]">
+                    <p className="text-[#232536] font-medium text-[1.8rem] lg:text-[2.4rem] lg:leading-[3.2rem]">
                       {post.postTitle}
                     </p>
                   </div>
@@ -105,8 +113,11 @@ function HomePage() {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
-            <Link>
-              <span className="text-[#592EA9] font-Sen text-[1.8rem] font-bold leading-[3.2rem]">{`Read More >`}</span>
+            <Link to={ABOUT} className="flex items-center justify-start">
+              <span className="text-[#592EA9] font-Sen text-[1.8rem] font-bold leading-[3.2rem]">
+                Read more
+              </span>
+              <MdArrowRight size={"2rem"} fill="#592EA9" />
             </Link>
           </div>
           {/* mission */}
@@ -128,19 +139,19 @@ function HomePage() {
       </section>
 
       {/* category section */}
-      <section className="max-w-[120rem] mx-auto">
+      <section className="max-w-[120rem] mx-auto px-4">
         <Categories textAlign={"center"} />
       </section>
 
       {/* discover/about section */}
-      <section className="max-w-[120rem] mx-auto mt-[8rem] lg:relative">
+      <section className="max-w-[120rem] mx-auto mt-[10rem] lg:relative">
         <div>
           <img
             src={discoveryImg}
             alt="discoverImg"
             className="block lg:w-[60%]"
           />
-          <div className="pt-4 p-1 bg-[#fff] lg:absolute lg:bottom-0 lg:right-0 lg:p-[4rem] xlg:p-[8rem]">
+          <div className="pt-8 p-1 bg-[#fff] lg:absolute lg:bottom-0 lg:right-0 lg:p-[4rem] xlg:p-[8rem]">
             <h5 className="text-[#232536] text-[1.6rem] font-semibold leading-[2rem] tracking-[.3rem] uppercase">
               Why we started
             </h5>
@@ -154,9 +165,13 @@ function HomePage() {
               nisi ut aliquip.
             </p>
             <GlobalButton
-              text="Discover our story >"
-              className={"bg-[#FFD050]"}
-            />
+              href={ABOUT}
+              text="Discover our story"
+              className={"bg-[#FFD050] inline-flex"}
+              paddingLR={1.5}
+            >
+              <MdArrowRight />
+            </GlobalButton>
           </div>
         </div>
       </section>
@@ -167,7 +182,7 @@ function HomePage() {
       </div>
 
       {/* list of features section */}
-      <div className="mt-[10rem] max-w-[128rem] mx-auto">
+      <div className="mt-[10rem] max-w-[120rem] mx-auto">
         <FeaturedLogos />
       </div>
 

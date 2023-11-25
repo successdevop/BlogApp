@@ -1,6 +1,6 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import JoinOurTeam from "../components/JoinOurTeam";
-import WhatNextPost from "../components/WhatNextPost";
+
 import {
   BusinessIcon,
   EconomyIcon,
@@ -11,6 +11,7 @@ import {
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import GlobalButton from "../components/GlobalButton";
+import { BLOG } from "../assets/constants/routePaths";
 
 function BlogPostPage() {
   const [author, setAuthor] = useState(null);
@@ -188,9 +189,32 @@ function BlogPostPage() {
           What to read next
         </h2>
         <div className="mt-[5rem] px-4 border-b-2 pb-[2rem] lmd:flex gap-[3rem]">
-          <WhatNextPost />
-          <WhatNextPost />
-          <WhatNextPost />
+          {dataBase.posts.slice(0, 3).map((post) => (
+            <Link
+              key={post.postId}
+              className="lg:flex lg:gap-[4rem] lg:items-center"
+              to={`${BLOG}/${post.postId}`}
+            >
+              <div className="">
+                <img
+                  src={post.postImage}
+                  alt="post image"
+                  className="min-h-[28rem] max-h-[30rem] min-w-full object-cover lg:h-[28rem] lg:w-[39.7rem]"
+                />
+              </div>
+              <div className="mt-10 lg:mt-4">
+                <h5 className="text-[#592EA9] text-[1.6rem] font-semibold leading-8 tracking-[.3rem] uppercase mb-8">
+                  {post.postCategory}
+                </h5>
+                <h2 className="max-w-[62.4rem] font-Sen text-[3.6rem] font-bold leading-[4.8rem] tracking-[-.2rem] mb-[1.6rem]">
+                  {post.postTitle}
+                </h2>
+                <p className="text-[#6D6E76] max-w-[62.4rem] text-[1.6rem] leading-[2.8rem] mb-[3.2rem] lmd:m-0">
+                  {post.postContent}
+                </p>
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
 

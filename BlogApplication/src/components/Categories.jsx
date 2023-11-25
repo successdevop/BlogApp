@@ -28,7 +28,7 @@ function Categories({ marginTop = 8, textAlign, text = "Choose A Catagory" }) {
                   "h-[8rem] w-[8rem] bg-[#FBF6EA] rounded-[1rem] p-6 group-hover:bg-white"
                 }
               />
-              <h5 className="text-[#232536] font-Sen text-[2.8rem] font-bold leading-[4rem] tracking-[-.rem] mt-6">
+              <h5 className="text-[#232536] font-Sen text-[2.8rem] font-bold leading-[4rem] tracking-[-.1rem] mt-6">
                 {category.header}
               </h5>
               <p className="text-[#6D6E76] text-[1.6rem] leading-[2.8rem]">

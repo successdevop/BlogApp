@@ -48,7 +48,7 @@ function Testimonials() {
               <p className="max-w-[46.9rem] font-Sen text-[2.4rem] font-bold leading-[3.2rem] text-[#232536]">
                 {quote}
               </p>
-              <div className="mt-[5rem] relative lmd:justify-self-stretch">
+              <div className="lmd:mt-[5rem] relative lmd:self-end mr-[10rem]">
                 <div className="flex gap-[1.6rem] items-center">
                   <img
                     src={img}
@@ -59,7 +59,7 @@ function Testimonials() {
                     <h5 className="text-[#232536] font-Sen text-[2rem] font-bold leading-[1.6rem]">
                       {name}
                     </h5>
-                    <p className="text-[#6D6E76] text-[1.6rem] leading-[2.8rem] lmd:text-left capitalize">
+                    <p className="text-[#6D6E76] text-[1.6rem] leading-[2.8rem] text-left capitalize">
                       {title}
                     </p>
                   </div>

@@ -1,4 +1,4 @@
-function WhatNextPost() {
+function NextSinglePost() {
   return (
     <article>
       <div>
@@ -21,4 +21,4 @@ function WhatNextPost() {
   );
 }
 
-export default WhatNextPost;
+export default NextSinglePost;
